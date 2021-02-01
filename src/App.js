@@ -18,57 +18,26 @@ class App extends React.Component {
         mapboxgl.accessToken = TOKEN;
         mapModel.setup();
 
-        mapModel.map.on('load', ()=> {
-            mapModel.map.addImage('pulsing-dot', createDot(mapModel.map), { pixelRatio: 2 });
-
-            mapModel.map.addSource('points', {
-                'type': 'geojson',
-                'data': {
-                    'type': 'FeatureCollection',
-                    'features': [
-                        {
-                            'type': 'Feature',
-                            'properties': {
-                                some: 42
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [-74.5, 40]
-                            }
-                        },
-                        {
-                            'type': 'Feature',
-                            'properties': {
-                                some: 12
-                            },
-                            'geometry': {
-                                'type': 'Point',
-                                'coordinates': [-74.07, 40.05]
-                            }
-                        }
-                    ]
+        mapModel.drawFeatures([
+            {
+                'type': 'Feature',
+                'properties': {
+                    some: 42
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [30.5234, 50.4501]
                 }
-            });
+            }
+        ]);
 
-            // Add a symbol layer
-            mapModel.map.addLayer({
-                'id': 'symbols',
-                'type': 'symbol',
-                'source': 'points',
-                'layout': {
-                    'icon-image': 'pulsing-dot'
-                }
-            });
-        });
+        mapModel.map.on('click', (e)=> {
+            mapModel.popup && mapModel.popup.remove();
 
-        mapModel.map.on('click', 'symbols', (e)=> {
-            const feature = e.features[0];
+            const features = mapModel.map.queryRenderedFeatures(e.point, { layers: ['symbols'] });
+            if (!features.length) return;
 
-            this.popup && this.popup.remove();
-            this.popup = new mapboxgl.Popup({ closeOnClick: false })
-                        .setLngLat(feature.geometry.coordinates)
-                        .setHTML(`<div>TEST</div>`)
-                        .addTo(mapModel.map);
+            mapModel.drawPopup(features[0]);
 
             // mapModel.map.flyTo({
             //     center: e.features[0].geometry.coordinates

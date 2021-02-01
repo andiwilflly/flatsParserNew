@@ -1,5 +1,7 @@
+import mapModel from "../models/map.model";
 
-function mapDot(map) {
+
+function mapDot() {
     const size = 50;
 
     return {
@@ -8,54 +10,35 @@ function mapDot(map) {
         data: new Uint8Array(size * size * 4),
 
         onAdd: function() {
-            var canvas = document.createElement('canvas');
+            const canvas = document.createElement('canvas');
             canvas.width = this.width;
             canvas.height = this.height;
             this.context = canvas.getContext('2d');
         },
 
         render: function() {
-            var duration = 2000;
-            var t = (performance.now() % duration) / duration;
+            const ctx = this.context;
 
-            var radius = (size / 2) * 0.3;
-            var outerRadius = (size / 2) * 0.7 * t + radius;
-            var context = this.context;
+            const zoom = mapModel.map.getZoom();
+            const size = zoom >= 12 ? zoom : zoom/3;
+            ctx.clearRect(0, 0, this.width, this.height);
 
-            context.clearRect(0, 0, this.width, this.height);
-            context.beginPath();
-            context.arc(
-                this.width / 2,
-                this.height / 2,
-                outerRadius,
-                0,
-                Math.PI * 2
-            );
-            context.fillStyle = 'rgba(255, 200, 200,' + (1 - t) + ')';
-            context.fill();
+            ctx.beginPath();
+            ctx.arc( this.width / 2, this.height / 2, size + 3, 0, 2 * Math.PI);
+            ctx.fillStyle = "white";
+            ctx.fill();
 
-            context.beginPath();
-            context.arc(
-                this.width / 2,
-                this.height / 2,
-                radius,
-                0,
-                Math.PI * 2
-            );
-            context.fillStyle = 'rgba(255, 100, 100, 1)';
-            context.strokeStyle = 'white';
-            context.lineWidth = 2 + 4 * (1 - t);
-            context.fill();
-            context.stroke();
+            ctx.beginPath();
+            ctx.arc(this.width / 2, this.height / 2, size, 0, 2 * Math.PI);
+            ctx.fillStyle = "red";
+            ctx.fill();
 
-            this.data = context.getImageData(
+            this.data = ctx.getImageData(
                 0,
                 0,
                 this.width,
                 this.height
             ).data;
-
-            map.triggerRepaint();
 
             return true;
         }
