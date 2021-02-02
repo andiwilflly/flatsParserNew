@@ -20,7 +20,7 @@ function mapDot() {
             const ctx = this.context;
 
             const zoom = mapModel.map.getZoom();
-            const size = zoom >= 12 ? zoom : zoom/3;
+            const size = zoom >= 12 ? zoom : zoom/1.5;
             ctx.clearRect(0, 0, this.width, this.height);
 
             ctx.beginPath();

@@ -1,7 +1,10 @@
 import React from "react"
 import mapboxgl from 'mapbox-gl';
-// Components
-import createDot from "./map/mapDot.canvas";
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
+import DB from "./server/DB.json";
+import "./map/canvasIcon";
+import canvasMarker from "./map/canvasMarker";
 // Models
 import mapModel from "./models/map.model";
 
@@ -18,38 +21,35 @@ class App extends React.Component {
         mapboxgl.accessToken = TOKEN;
         mapModel.setup();
 
-        mapModel.drawFeatures([
-            {
-                'type': 'Feature',
-                'properties': {
-                    some: 42
-                },
-                'geometry': {
-                    'type': 'Point',
-                    'coordinates': [30.5234, 50.4501]
-                }
+        const myIcon = L.canvasIcon({ drawIcon: canvasMarker });
+        const customCircleMarker = L.CircleMarker.extend({
+            options: {
+                someCustomProperty: 'Custom data!',
+                anotherCustomProperty: 'More data!'
             }
-        ]);
-
-        mapModel.map.on('click', (e)=> {
-            mapModel.popup && mapModel.popup.remove();
-
-            const features = mapModel.map.queryRenderedFeatures(e.point, { layers: ['symbols'] });
-            if (!features.length) return;
-
-            mapModel.drawPopup(features[0]);
-
-            // mapModel.map.flyTo({
-            //     center: e.features[0].geometry.coordinates
-            // });
         });
 
-        mapModel.map.on('mouseenter', 'symbols', ()=> {
-            mapModel.map.getCanvas().style.cursor = 'pointer';
-        });
 
-        mapModel.map.on('mouseleave', 'symbols', ()=> {
-            mapModel.map.getCanvas().style.cursor = '';
+        DB.offers.forEach(offer => {
+            L.marker([
+                offer.geo.displayPosition.latitude,
+                offer.geo.displayPosition.longitude
+            ], { icon: myIcon, ...offer })
+                .addTo(mapModel.map)
+                .on('click', (e)=> {
+                    const offer = e.sourceTarget.options;
+                    L.popup()
+                        .setLatLng(e.latlng)
+                        .setContent(`
+                            <a href=${offer.link} target="_blank">
+                                <img src=${offer.img} style="width: 100%; height: auto;">
+                                <br/>
+                                <b>${offer.title}</b>    
+                                <div>${offer.price}</div>    
+                            </a>
+                        `)
+                        .openOn(mapModel.map);
+                });
         });
     }
 
@@ -57,7 +57,7 @@ class App extends React.Component {
     render() {
         return (
             <>
-                <div id='map' style={{ width: '100vw', height: '80vh' }} />
+                <div id='map' style={{ width: '100vw', height: '90vh' }} />
             </>
         );
     }
