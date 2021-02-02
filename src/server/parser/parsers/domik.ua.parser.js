@@ -1,35 +1,41 @@
-const CONFIG = require('../config.json');
-
+const cliProgress = require('cli-progress');
+let progress = null;
 
 
 module.exports = async function(browser, url) {
 
-    console.log('DOMIK.UA PARSER:START');
+    console.log('✨ DOMIK.UA PARSER:START');
    try {
-       console.log('DOMIK.UA PARSER:END');
-       return await parsePage(browser, url, 0, []);
+       const offers = await parsePage(browser, url, 0, []);
+       progress.stop();
+       return offers;
    } catch(e) {
-       console.log('✨DOMIK.UA PAGE ERROR | ', e);
-       console.log('DOMIK.UA PARSER:ERROR');
+       console.log('✨ DOMIK.UA PAGE ERROR | ', e);
+       progress.stop();
        return {};
    }
 
 }
 
 async function parsePage(browser, url, number = 0, offers = []) {
-    console.log('✨DOMIK.UA ENTER page:', number);
-
     const page = await browser.newPage();
     await page.goto(`${url}&page=${number * 35}`, {
         waitUntil: 'load',
         timeout: 0
     });
 
-    const isEndOfPages = await page.evaluate(()=> {
-        return ![...document.querySelectorAll('.objava') ].length;
-    });
+    const totalPages = Math.round(await page.evaluate(()=> {
+        return parseInt(document.querySelector('.sort_p_item').innerText);
+    }) / 35);
 
-    if(number > 10 || isEndOfPages) return offers;
+    if(!progress) {
+        progress = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
+        progress.start(totalPages, 0);
+    } else {
+        progress.update(number);
+    }
+
+    if(totalPages <= number) return offers;
 
     const rows = await page.evaluate(()=> {
         return [...document.querySelectorAll('.objava') ].map($row => {
@@ -38,11 +44,10 @@ async function parsePage(browser, url, number = 0, offers = []) {
                 img: `http://domik.ua${$row.querySelector('.image').getAttribute('src')}`,
                 title: $row.querySelector('.tittle_obj > a').innerText,
                 link: `http://domik.ua${$row.querySelector('.tittle_obj > a').getAttribute('href')}`,
-                price: $row.querySelector('.commission').innerText,
-                district: $row.querySelector('.h5_address').innerText,
-                color: '#ff8d00',
-                size: $row.querySelector('.objava_detal_info').innerText,
+                price: parseInt($row.querySelector('.commission').innerText.replace(/\$/g, '').replace(/ /g, '')),
                 address: $row.querySelector('.h5_address').innerText,
+                floor: $row.querySelector('.objava_detal_info').innerText.match(/Этаж: ?\d+\/\d+/g)[0].match(/\d+/g).map(f => +f),
+                square: +[...$row.querySelectorAll('.objava_detal_info .color-gray')].find($el => $el.innerText.includes('Площадь')).innerText.split(':')[1].split('/')[0],
                 source: 'domik.ua'
             };
         });

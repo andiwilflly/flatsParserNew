@@ -2,7 +2,7 @@
 	"parsers": [
 		{
 			"name": "domik.ua",
-			"url": "http://domik.ua/nedvizhimost/kiev/kupit-kvartiry.html?lim=&order=&seq=&realtType=novostrojki&extSrch=1&url_region=kiev&search_type=kupit-kvartiry&codeSearch=&PRICE_FROM=500000&PRICE_TO=&PRICE_CLASS=0&DAYS_AGO=0&MITRO_DISTANCE=&streetSearch=&HOUSE_NUM=&STOREY_FROM=&STOREY_TO=&STOREY_NOFIRST=1&STOREY_NOLAST=1&ALL_AREA_FROM=30&ALL_AREA_TO=&LIV_AREA_FROM=&KIT_AREA_FROM=&LAND_AREA_FROM=&LAND_AREA_TO="
+			"url": "http://domik.ua/nedvizhimost/kiev/kupit-kvartiry.html?lim=35&order=date&seq=desc&realtType=kupit-kvartiry&extSrch=1&url_region=kiev&REGIONS%5B%5D=8036100029&REGIONS%5B%5D=8038200013&REGIONS%5B%5D=8038200014&REGIONS%5B%5D=8038200015&REGIONS%5B%5D=8039100012&search_type=kupit-kvartiry&codeSearch=&PRICE_FROM=500000&PRICE_TO=5000000&PRICE_CLASS=0&DAYS_AGO=0&MITRO_DISTANCE=&streetSearch=&HOUSE_NUM=&STOREY_FROM=&STOREY_TO=&STOREY_NOFIRST=1&STOREY_NOLAST=1&ALL_AREA_FROM=50&ALL_AREA_TO=&LIV_AREA_FROM=&KIT_AREA_FROM=&LAND_AREA_FROM=&LAND_AREA_TO="
 		}
 	]
 }

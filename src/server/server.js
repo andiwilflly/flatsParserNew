@@ -3,7 +3,6 @@ const FileSync = require('lowdb/adapters/FileSync');
 const parser = require('./parser/parser');
 
 
-
 const express = require('express');
 const app = express();
 const port = 4000;
@@ -19,7 +18,7 @@ app.get('/', (req, res) => {
 
 app.get('/start-parser', (req, res) => {
     parser.start();
-    res.send(200);
+    res.send('Parser started');
 });
 
 

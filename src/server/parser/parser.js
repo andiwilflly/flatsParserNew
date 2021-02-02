@@ -32,7 +32,7 @@ module.exports = {
         newOffers = await geoCoder(newOffers);
         newOffers.forEach(offer => offersDB.push(offer).write());
 
-        console.log('offers: ', offers.length, 'oldOffers:', oldOffers.length, 'newOffers', newOffers.length);
+        console.log('offers: ', offers.length, 'oldOffers:', oldOffers.length, 'newOffers (filtered)', newOffers.length);
     },
 
     stop() {
