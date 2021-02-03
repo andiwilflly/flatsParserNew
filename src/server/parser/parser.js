@@ -3,7 +3,8 @@ const setupBrowser = require('./utils/setupBrowser');
 const geoCoder = require('./utils/geoCoder');
 
 const parsers = {
-    'domik.ua': require('./parsers/domik.ua.parser')
+    'domik.ua': require('./parsers/domik.ua.parser'),
+    'dom.ria': require('./parsers/dom.ria.parser')
 };
 
 
@@ -14,10 +15,14 @@ module.exports = {
         let offers = [];
         const browser = await setupBrowser();
         for(const parser of  CONFIG.parsers) {
-            console.log('parser:', parsers[parser.name]);
             offers = [ ...offers, ...await parsers[parser.name](browser, parser.url) ];
         }
         browser.close();
+
+        // Deduplicate offers
+        console.log('before: ', offers.length);
+        offers = [...new Set(offers.map(offer => offer.id))].map(offerId => offers.find(offer => offer.id === offerId));
+        console.log('after: ', offers.length);
 
         const offersDB = global.DB.get('offers');
         const oldOffers = offers

@@ -10,4 +10,3 @@ puppeteer.use(AdblockerPlugin({ blockTrackers: true }));
 module.exports = async function () {
     return await puppeteer.launch({ headless: true });
 }
-

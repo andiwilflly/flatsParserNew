@@ -9,7 +9,22 @@ module.exports = async function(offers) {
     const progress = new cliProgress.SingleBar({}, cliProgress.Presets.shades_grey);
     progress.start(offers.length-1, 0);
 
-    let parsedOffers = await Promise.all(offers.map(async (offer, i)=> {
+    let parsedOffers = await Promise.all(offers.map(async (offer)=> {
+        if(offer.latitude && offer.longitude) {
+            progress.increment();
+            return {
+                ...offer,
+                "geo": {
+                    "relevance": 1,
+                    "locationType": "point",
+                    "displayPosition": {
+                        "latitude": offer.latitude,
+                        "longitude": offer.longitude
+                    }
+                }
+            };
+        }
+
         try {
             return fetch(geoCoderUrl(offer.address))
                 .then(response => response.json())

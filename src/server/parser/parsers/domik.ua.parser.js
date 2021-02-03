@@ -20,11 +20,11 @@ module.exports = async function(browser, url) {
 async function parsePage(browser, url, number = 0, offers = []) {
     const page = await browser.newPage();
     await page.goto(`${url}&page=${number * 35}`, {
-        waitUntil: 'load',
-        timeout: 0
+        // waitUntil: 'load',
+        // timeout: 0
     });
 
-    const totalPages = Math.round(await page.evaluate(()=> {
+    const totalPages = 1 || Math.round(await page.evaluate(()=> {
         return parseInt(document.querySelector('.sort_p_item').innerText);
     }) / 35);
 
@@ -40,14 +40,17 @@ async function parsePage(browser, url, number = 0, offers = []) {
     const rows = await page.evaluate(()=> {
         return [...document.querySelectorAll('.objava') ].map($row => {
             return {
-                id: $row.getAttribute('id') + $row.querySelector('.image').getAttribute('src'),
+                id: $row.querySelector('.tittle_obj > a').innerText,
                 img: `http://domik.ua${$row.querySelector('.image').getAttribute('src')}`,
                 title: $row.querySelector('.tittle_obj > a').innerText,
                 link: `http://domik.ua${$row.querySelector('.tittle_obj > a').getAttribute('href')}`,
-                price: parseInt($row.querySelector('.commission').innerText.replace(/\$/g, '').replace(/ /g, '')),
                 address: $row.querySelector('.h5_address').innerText,
+
+                price: parseInt($row.querySelector('.commission').innerText.replace(/\$/g, '').replace(/ /g, '')),
                 floor: $row.querySelector('.objava_detal_info').innerText.match(/Этаж: ?\d+\/\d+/g)[0].match(/\d+/g).map(f => +f),
+                rooms: null,
                 square: +[...$row.querySelectorAll('.objava_detal_info .color-gray')].find($el => $el.innerText.includes('Площадь')).innerText.split(':')[1].split('/')[0],
+
                 source: 'domik.ua'
             };
         });

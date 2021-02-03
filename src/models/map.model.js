@@ -104,7 +104,8 @@ class MapModel {
                     list: [],
                     left: 0,
                     top: 0
-                }
+                },
+                selectedOffers: features
             });
             // features.forEach(feature => {
             //     this.flats[feature.values_.link].flat.isVisited = true;

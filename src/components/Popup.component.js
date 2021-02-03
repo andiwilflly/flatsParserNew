@@ -8,34 +8,34 @@ const formatter = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 
 
 class Popup extends React.Component {
 
-    renderOfferPopup = (offer)=> {
+    renderOfferPopup = (offer, size)=> {
         offer = offer.values_;
         return (
-            <div key={ offer.id }>
+            <div key={ offer.id } style={{ marginBottom: 10 }}>
                 <a href={ offer.link }
                    target="_blank"
                    style={{ fontSize: 12 }}>{ offer.address }</a>
-                <br/>
-                <b style={{ color: '#ff6a16', fontSize: 12 }}>{ formatter.format(offer.price) }</b>
+                <div>
+                    <b style={{ color: '#ff6a16', fontSize: 12 }}>{ formatter.format(offer.price) }</b>
+                </div>
                 <div style={{
-                    width: 100,
+                    width: size,
                     display: 'flex',
                     flexWrap: 'wrap',
-                    height: 100,
                     margin: '4px 0',
                     justifyContent: 'start'
                 }}>
                     <img src={ offer.img }
                          style={{
-                             maxWidth: 100 - 10,
+                             maxWidth: size - 10,
                              objectFit: 'contain',
                              margin: 1,
-                             maxHeight: 100 - 5
+                             maxHeight: size - 5
                          }} />
                 </div>
 
-
-                <div style={{ fontSize: 10 }}><i>{ offer.geo.address.label }</i></div>
+                <div style={{ fontSize: 10 }}><i>{ offer.description && offer.description.slice(0, 200) + '...' }</i></div>
+                <div style={{ fontSize: 10 }}><i>{ offer.geo.address && offer.geo.address.label }</i></div>
                 <div style={{ fontSize: 10, color: offer.color }}><i>({ offer.source })</i></div>
             </div>
         );
@@ -49,6 +49,7 @@ class Popup extends React.Component {
                 { mapModel.hoveredOffers.list.length ?
                     <div id="smallPopup" style={{
                         position: 'fixed',
+                        maxWidth: Math.ceil(Math.sqrt(mapModel.hoveredOffers.list.length)) * 150,
                         background: 'white',
                         lineHeight: '100%',
                         display: 'grid',
@@ -61,12 +62,33 @@ class Popup extends React.Component {
                         left: mapModel.hoveredOffers.left,
                         zIndex: 100
                     }}>
-                        { mapModel.hoveredOffers.list.map(this.renderOfferPopup) }
+                        { mapModel.hoveredOffers.list.map((offer)=> this.renderOfferPopup(offer,100)) }
                     </div>
                     :
                     null }
 
-                Popup
+                { mapModel.selectedOffers.length ?
+                    <div id="info" style={{
+                        position: 'fixed',
+                        bottom: 5,
+                        lineHeight: '100%',
+                        right: 5,
+                        zIndex: 101,
+                        overflow: 'auto',
+                        maxHeight: '90vh',
+                        width: 300,
+                        boxShadow: '0px 0px 38px 10px rgba(143,143,143,1)',
+                        display: 'gr id',
+                        gridTemplateColumns: `repeat(${Math.ceil(Math.sqrt(mapModel.selectedOffers.length))}, 1fr)`,
+                        gridTemplateRows: `repeat(${Math.ceil(Math.sqrt(mapModel.selectedOffers.length))}, 1fr)`,
+                        gridColumnGap: 3,
+                        gridRowGap: 3,
+                        background: 'whitesmoke',
+                        padding: 5
+                    }}>
+                        { mapModel.selectedOffers.map(flat => this.renderOfferPopup(flat, 295)) }
+                    </div>
+                    : null }
             </div>
         );
     }
