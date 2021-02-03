@@ -8,13 +8,13 @@ export default function($canvas) {
 
     $canvas.style.width = `${mapModel.dotSize}px`;
     $canvas.style.height = `${mapModel.dotSize}px`;
-
     // Set actual size in memory (scaled to account for extra pixel density).
     $canvas.width = mapModel.dotSize * scale;
     $canvas.height = mapModel.dotSize * scale;
     ctx.scale(scale, scale);
     ctx.scale(scale, scale);
 
+    ctx.globalAlpha = 1;
     ctx.beginPath();
     ctx.arc( mapModel.dotSize/(2+scale), mapModel.dotSize/(2+scale), 2, 0, 2 * Math.PI);
     ctx.fillStyle = "white";

@@ -12,6 +12,32 @@ code {
     monospace;
 }
 
-.mapboxgl-popup-close-button {
-  display: none;
+.leaflet-popup-content {
+
+}
+.leaflet-popup-content b {
+  font-size: 14px;
+  display: block;
+}
+.leaflet-popup-content * {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+  padding: 5px;
+  border: none;
+  border-bottom: 1px solid black;
+  background: white;
+  min-width: 300px;
+  color: black;
+}
+
+.filters {
+  position: fixed;
+  top: 10px;
+  z-index: 2000;
+  right: 10px;
+  /*background: whitesmoke;*/
+  padding: 5px;
 }
