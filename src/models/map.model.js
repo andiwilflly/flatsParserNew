@@ -1,5 +1,5 @@
 // MobX
-import { makeAutoObservable } from 'mobx';
+import { makeAutoObservable, action } from 'mobx';
 import DB from "../server/DB.json";
 // Helpers
 // Map Ol
@@ -9,15 +9,13 @@ import Map from 'ol/Map';
 import View from 'ol/View';
 import Point from 'ol/geom/Point';
 import { Tile as TileLayer, Vector as VectorLayer } from 'ol/layer';
-import { Circle as CircleStyle, Fill, Stroke, Icon, Style } from 'ol/style';
+import { Circle as CircleStyle, Fill, Stroke, Style } from 'ol/style';
 import { fromLonLat } from 'ol/proj';
 import VectorSource from 'ol/source/Vector';
 import OSM from 'ol/source/OSM';
 // Other
-import L from "leaflet";
 import * as ComLink from "comlink";
 
-const formatter = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'USD' });
 
 class MapModel {
 
@@ -26,11 +24,25 @@ class MapModel {
     popup = null;
     worker = null;
     dotSize = 20;
+    hoveredOffers = {
+        list: [],
+        top: 0,
+        left: 0
+    };
+    selectedOffers = [];
 
     constructor() {
         makeAutoObservable(this);
-        this.setupWorker();
+        //this.setupWorker();
     }
+
+
+    update = action((newFields = {})=> {
+        Object.keys(this).forEach((fieldName)=> {
+            if(newFields[fieldName] !== undefined) this[fieldName] = newFields[fieldName];
+        });
+    })
+
 
     async setupWorker() {
         this.worker = new Worker( '../map/searchWorker.js');
@@ -41,7 +53,7 @@ class MapModel {
     }
 
 
-    setup2() {
+    setup() {
         const vectorSource = new VectorSource({
             features: DB.offers.map(offer => {
                 const flatDot = new Feature({
@@ -87,7 +99,13 @@ class MapModel {
             const features = this.map.getFeaturesAtPixel(event.pixel);
 
             console.log(features, 2);
-            //this.hoveredFlatsData.ids = [];
+            this.update({
+                hoveredOffers: {
+                    list: [],
+                    left: 0,
+                    top: 0
+                }
+            });
             // features.forEach(feature => {
             //     this.flats[feature.values_.link].flat.isVisited = true;
             // });
@@ -101,47 +119,15 @@ class MapModel {
             const pixel = this.map.getEventPixel(event.originalEvent);
             const features = this.map.getFeaturesAtPixel(pixel);
 
-            // this.hoveredFlatsData.ids = features.map(feature => feature.values_.link);
-            // this.hoveredFlatsData.left = pixel[0];
-            // this.hoveredFlatsData.top = pixel[1] + 25;
+            this.update({
+                hoveredOffers: {
+                    list: features,
+                    left: pixel[0],
+                    top: pixel[1] + 25
+                }
+            });
             this.map.getViewport().style.cursor = features.length ? 'pointer' : 'inherit';
         });
-    }
-
-    setup() {
-        this.map =  L.map('map').setView([50.4501, 30.5234], 12);
-
-        // https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
-        this.layer = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-            maxZoom: 18,
-            attribution: '',
-            minZoom: 11,
-            id: 'mapbox/streets-v11',
-            tileSize: 512,
-            zoomOffset: -1
-        }).addTo(this.map);
-    }
-
-
-    drawPopup(L, latLng, offer) {
-        L.popup()
-            .setLatLng(latLng)
-            .setContent(`
-                <a href=${offer.link} target="_blank">
-                    <img src=${offer.img} style="min-width: 200px; width: 100%; height: auto;">
-                   
-                    <b>${offer.title}</b>
-                    <div style="color: black">${formatter.format(offer.price)}</div>  
-                    <br/>  
-                    <div>площадь: ${offer.square}м</div>  
-                    <div>этаж: ${offer.floor[0]}/${offer.floor[1]}</div>  
-                    <div>${offer.address}</div>    
-                    (<i style="color:gray">${offer.geo.address.label}</i>)              
-                    <hr/>
-                    <div style="color: gray">${offer.source}</div>
-                </a>
-            `)
-            .openOn(this.map);
     }
 }
 

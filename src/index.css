@@ -41,3 +41,13 @@ input {
   /*background: whitesmoke;*/
   padding: 5px;
 }
+
+.popup {
+  position: fixed;
+  bottom: 10px;
+  z-index: 2000;
+  right: 10px;
+  background: whitesmoke;
+  max-height: 500px;
+  padding: 5px;
+}

@@ -1,6 +1,4 @@
 import React from "react"
-import 'leaflet.markercluster';
-import "../map/canvasIcon";
 // Models
 import mapModel from "../models/map.model";
 
@@ -11,7 +9,7 @@ class Map extends React.Component {
 
 
     componentDidMount() {
-        mapModel.setup2();
+        mapModel.setup();
     }
 
 
