@@ -11,7 +11,7 @@ class Popup extends React.Component {
     renderOfferPopup = (offer, size)=> {
         offer = offer.values_;
         return (
-            <div key={ offer.id } style={{ marginBottom: 10 }}>
+            <div key={ offer.id } style={{ marginBottom: 10, padding: 3 }}>
                 <a href={ offer.link }
                    target="_blank"
                    style={{ fontSize: 12 }}>{ offer.address }</a>
@@ -34,6 +34,8 @@ class Popup extends React.Component {
                          }} />
                 </div>
 
+                { offer.square ? <div style={{ fontSize: 10 }}><i>{offer.square} м²</i></div> : null }
+                { offer.floor ? <div style={{ fontSize: 10 }}><i>этаж {offer.floor[0]} из {offer.floor[1]}</i></div> : null }
                 <div style={{ fontSize: 10 }}><i>{ offer.description && offer.description.slice(0, 200) + '...' }</i></div>
                 <div style={{ fontSize: 10 }}><i>{ offer.geo.address && offer.geo.address.label }</i></div>
                 <div style={{ fontSize: 10, color: offer.color }}><i>({ offer.source })</i></div>
