@@ -1,4 +1,5 @@
 import React from "react";
+import { formatDistance } from 'date-fns';
 import { observer } from 'mobx-react';
 import mapModel from "../models/map.model";
 
@@ -10,6 +11,7 @@ class Popup extends React.Component {
 
     renderOfferPopup = (offer, size)=> {
         offer = offer.values_;
+
         return (
             <div key={ offer.id } style={{ marginBottom: 10, padding: 3 }}>
                 <a href={ offer.link }
@@ -33,6 +35,7 @@ class Popup extends React.Component {
                              maxHeight: size - 5
                          }} />
                 </div>
+                <b style={{ fontSize: 10 }}>{ formatDistance(new Date(offer.createdAt), new Date()) }</b>
 
                 { offer.square ? <div style={{ fontSize: 10 }}><i>{offer.square} м²</i></div> : null }
                 { offer.floor ? <div style={{ fontSize: 10 }}><i>этаж {offer.floor[0]} из {offer.floor[1]}</i></div> : null }

@@ -65,7 +65,7 @@ class MapModel {
                     image: new CircleStyle({
                         radius: 4,
                         fill: new Fill({
-                            color: 'blue'
+                            color: Date.now() - offer.createdAt > 86400000 ? 'blue' : 'red'
                         }),
                         stroke: new Stroke({ color: 'white', width: 1 })
                     })

@@ -14,6 +14,7 @@
       "rooms": 3,
       "square": 72,
       "source": "bn.ua | индивидуальное отопление",
+      "createdAt": 1612436716582,
       "geo": {
         "relevance": 0.62,
         "locationId": "NT_BL30Prwa1HGnl-QBfgEFMB_ygD",
@@ -74,6 +75,7 @@
       "rooms": 2,
       "square": 69,
       "source": "bn.ua | индивидуальное отопление",
+      "createdAt": 1612436716582,
       "geo": {
         "relevance": 1,
         "locationId": "NT_CwjzQkfqWb01T5sSTqkyVD_zID",
@@ -134,6 +136,7 @@
       "rooms": 2,
       "square": 66,
       "source": "bn.ua | индивидуальное отопление",
+      "createdAt": 1612436716582,
       "geo": {
         "relevance": 1,
         "locationId": "NT_51EuxB22YQqQAYvoond4DD_xMD",
@@ -194,6 +197,7 @@
       "rooms": 2,
       "square": 66,
       "source": "bn.ua | индивидуальное отопление",
+      "createdAt": 1612436716582,
       "geo": {
         "relevance": 1,
         "locationId": "NT_hOjprVOAPqJUJGyFmRFz8D_zA",
@@ -254,6 +258,7 @@
       "rooms": 2,
       "square": 73,
       "source": "bn.ua | индивидуальное отопление",
+      "createdAt": 1612436716582,
       "geo": {
         "relevance": 1,
         "locationId": "NT_MdoaUECveRDvA3GJ7CmidC_xQD",
@@ -314,6 +319,7 @@
       "rooms": 3,
       "square": 108,
       "source": "bn.ua | индивидуальное отопление",
+      "createdAt": 1612436716582,
       "geo": {
         "relevance": 1,
         "locationId": "NT_k5SZxTcthJYmjW8shzwyeA_zAD0QC",
@@ -374,6 +380,7 @@
       "rooms": 2,
       "square": 76,
       "source": "bn.ua | индивидуальное отопление",
+      "createdAt": 1612436716582,
       "geo": {
         "relevance": 1,
         "locationId": "NT_CwjzQkfqWb01T5sSTqkyVD_zID",
@@ -421,75 +428,17 @@
       }
     },
     {
-      "id": "https://dom.ria.com/uk/novostroyka-zhk-creator-city-7246/planirovki/?planId=68223&withoutHeaderOffer=true&sectionId=8224&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
-      "img": "",
-      "title": "вул. Дегтярівська\n, 17-19",
-      "link": "https://dom.ria.com/uk/novostroyka-zhk-creator-city-7246/planirovki/?planId=68223&withoutHeaderOffer=true&sectionId=8224&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
-      "address": "Киев, вул. Дегтярівська\n, 17-19",
-      "price": 100107,
-      "floor": 0,
-      "rooms": 2,
-      "square": 65,
-      "source": "bn.ua | индивидуальное отопление",
-      "createdAt": 1612436261149,
-      "geo": {
-        "relevance": 0.85,
-        "locationId": "NT_BRck3iIIch4t8QMT8MUHNB_xcD",
-        "locationType": "point",
-        "displayPosition": {
-          "latitude": 50.46263,
-          "longitude": 30.46261
-        },
-        "navigationPosition": [
-          {
-            "latitude": 50.46285,
-            "longitude": 30.46267
-          }
-        ],
-        "mapView": {
-          "topLeft": {
-            "latitude": 50.4637542,
-            "longitude": 30.4608441
-          },
-          "bottomRight": {
-            "latitude": 50.4615058,
-            "longitude": 30.4643759
-          }
-        },
-        "address": {
-          "label": "Дегтярівська вулиця, 17, Київ, 04119, Україна",
-          "country": "UKR",
-          "county": "Київ",
-          "city": "Київ",
-          "district": "Шевченківський район",
-          "street": "Дегтярівська вулиця",
-          "houseNumber": "17",
-          "postalCode": "04119",
-          "additionalData": [
-            {
-              "value": "Україна",
-              "key": "CountryName"
-            },
-            {
-              "value": "Київ",
-              "key": "CountyName"
-            }
-          ]
-        }
-      }
-    },
-    {
-      "id": "https://dom.ria.com/uk/novostroyka-zhk-great-greit-6643/planirovki/?planId=104405&withoutHeaderOffer=true&sectionId=9676&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "id": "https://dom.ria.com/uk/novostroyka-zhk-great-greit-6643/planirovki/?planId=103825&withoutHeaderOffer=true&sectionId=6070&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
       "img": "",
       "title": "наб. Дніпровська\n, вул. Здолбунівська",
-      "link": "https://dom.ria.com/uk/novostroyka-zhk-great-greit-6643/planirovki/?planId=104405&withoutHeaderOffer=true&sectionId=9676&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "link": "https://dom.ria.com/uk/novostroyka-zhk-great-greit-6643/planirovki/?planId=103825&withoutHeaderOffer=true&sectionId=6070&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
       "address": "Киев, наб. Дніпровська\n, вул. Здолбунівська",
-      "price": 86177,
+      "price": 76431,
       "floor": 0,
       "rooms": 2,
-      "square": 83,
+      "square": 74,
       "source": "bn.ua | индивидуальное отопление",
-      "createdAt": 1612436350501,
+      "createdAt": 1612436786802,
       "geo": {
         "relevance": 0.59,
         "locationId": "NT_hI7B-PiDvPqylg220nRWCC",
@@ -536,17 +485,74 @@
       }
     },
     {
-      "id": "https://dom.ria.com/uk/novostroyka-zhk-creator-city-7246/planirovki/?planId=68208&withoutHeaderOffer=true&sectionId=8224&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "id": "https://dom.ria.com/uk/novostroyka-zhk-great-greit-6643/planirovki/?planId=103814&withoutHeaderOffer=true&sectionId=6069&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
       "img": "",
-      "title": "вул. Дегтярівська\n, 17-19",
-      "link": "https://dom.ria.com/uk/novostroyka-zhk-creator-city-7246/planirovki/?planId=68208&withoutHeaderOffer=true&sectionId=8224&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
-      "address": "Киев, вул. Дегтярівська\n, 17-19",
+      "title": "наб. Дніпровська\n, вул. Здолбунівська",
+      "link": "https://dom.ria.com/uk/novostroyka-zhk-great-greit-6643/planirovki/?planId=103814&withoutHeaderOffer=true&sectionId=6069&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "address": "Киев, наб. Дніпровська\n, вул. Здолбунівська",
       "price": 106265,
       "floor": 0,
       "rooms": 2,
-      "square": 73,
+      "square": 97,
       "source": "bn.ua | индивидуальное отопление",
-      "createdAt": 1612436350501,
+      "createdAt": 1612436786802,
+      "geo": {
+        "relevance": 0.59,
+        "locationId": "NT_hI7B-PiDvPqylg220nRWCC",
+        "locationType": "point",
+        "displayPosition": {
+          "latitude": 50.41871,
+          "longitude": 30.62662
+        },
+        "navigationPosition": [
+          {
+            "latitude": 50.41871,
+            "longitude": 30.62662
+          }
+        ],
+        "mapView": {
+          "topLeft": {
+            "latitude": 50.42583,
+            "longitude": 30.59926
+          },
+          "bottomRight": {
+            "latitude": 50.41086,
+            "longitude": 30.63975
+          }
+        },
+        "address": {
+          "label": "Здолбунівська вулиця, Київ, 02081, Україна",
+          "country": "UKR",
+          "county": "Київ",
+          "city": "Київ",
+          "district": "Дарницький район",
+          "street": "Здолбунівська вулиця",
+          "postalCode": "02081",
+          "additionalData": [
+            {
+              "value": "Україна",
+              "key": "CountryName"
+            },
+            {
+              "value": "Київ",
+              "key": "CountyName"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "https://dom.ria.com/uk/novostroyka-zhk-creator-city-7246/planirovki/?planId=68223&withoutHeaderOffer=true&sectionId=8224&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "img": "",
+      "title": "вул. Дегтярівська\n, 17-19",
+      "link": "https://dom.ria.com/uk/novostroyka-zhk-creator-city-7246/planirovki/?planId=68223&withoutHeaderOffer=true&sectionId=8224&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "address": "Киев, вул. Дегтярівська\n, 17-19",
+      "price": 100107,
+      "floor": 0,
+      "rooms": 2,
+      "square": 65,
+      "source": "bn.ua | индивидуальное отопление",
+      "createdAt": 1612436786802,
       "geo": {
         "relevance": 0.85,
         "locationId": "NT_BRck3iIIch4t8QMT8MUHNB_xcD",
@@ -594,17 +600,304 @@
       }
     },
     {
-      "id": "https://dom.ria.com/uk/novostroyka-zhk-great-greit-6643/planirovki/?planId=103831&withoutHeaderOffer=true&sectionId=6071&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "id": "https://dom.ria.com/uk/novostroyka-zhk-great-greit-6643/planirovki/?planId=103782&withoutHeaderOffer=true&sectionId=6068&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
       "img": "",
       "title": "наб. Дніпровська\n, вул. Здолбунівська",
-      "link": "https://dom.ria.com/uk/novostroyka-zhk-great-greit-6643/planirovki/?planId=103831&withoutHeaderOffer=true&sectionId=6071&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "link": "https://dom.ria.com/uk/novostroyka-zhk-great-greit-6643/planirovki/?planId=103782&withoutHeaderOffer=true&sectionId=6068&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
       "address": "Киев, наб. Дніпровська\n, вул. Здолбунівська",
-      "price": 80349,
+      "price": 71378,
+      "floor": 0,
+      "rooms": 2,
+      "square": 76,
+      "source": "bn.ua | индивидуальное отопление",
+      "createdAt": 1612436786802,
+      "geo": {
+        "relevance": 0.59,
+        "locationId": "NT_hI7B-PiDvPqylg220nRWCC",
+        "locationType": "point",
+        "displayPosition": {
+          "latitude": 50.41871,
+          "longitude": 30.62662
+        },
+        "navigationPosition": [
+          {
+            "latitude": 50.41871,
+            "longitude": 30.62662
+          }
+        ],
+        "mapView": {
+          "topLeft": {
+            "latitude": 50.42583,
+            "longitude": 30.59926
+          },
+          "bottomRight": {
+            "latitude": 50.41086,
+            "longitude": 30.63975
+          }
+        },
+        "address": {
+          "label": "Здолбунівська вулиця, Київ, 02081, Україна",
+          "country": "UKR",
+          "county": "Київ",
+          "city": "Київ",
+          "district": "Дарницький район",
+          "street": "Здолбунівська вулиця",
+          "postalCode": "02081",
+          "additionalData": [
+            {
+              "value": "Україна",
+              "key": "CountryName"
+            },
+            {
+              "value": "Київ",
+              "key": "CountyName"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "https://dom.ria.com/uk/novostroyka-zhk-great-greit-6643/planirovki/?planId=103789&withoutHeaderOffer=true&sectionId=6068&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "img": "",
+      "title": "наб. Дніпровська\n, вул. Здолбунівська",
+      "link": "https://dom.ria.com/uk/novostroyka-zhk-great-greit-6643/planirovki/?planId=103789&withoutHeaderOffer=true&sectionId=6068&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "address": "Киев, наб. Дніпровська\n, вул. Здолбунівська",
+      "price": 82488,
+      "floor": 0,
+      "rooms": 2,
+      "square": 89,
+      "source": "bn.ua | индивидуальное отопление",
+      "createdAt": 1612436786802,
+      "geo": {
+        "relevance": 0.59,
+        "locationId": "NT_hI7B-PiDvPqylg220nRWCC",
+        "locationType": "point",
+        "displayPosition": {
+          "latitude": 50.41871,
+          "longitude": 30.62662
+        },
+        "navigationPosition": [
+          {
+            "latitude": 50.41871,
+            "longitude": 30.62662
+          }
+        ],
+        "mapView": {
+          "topLeft": {
+            "latitude": 50.42583,
+            "longitude": 30.59926
+          },
+          "bottomRight": {
+            "latitude": 50.41086,
+            "longitude": 30.63975
+          }
+        },
+        "address": {
+          "label": "Здолбунівська вулиця, Київ, 02081, Україна",
+          "country": "UKR",
+          "county": "Київ",
+          "city": "Київ",
+          "district": "Дарницький район",
+          "street": "Здолбунівська вулиця",
+          "postalCode": "02081",
+          "additionalData": [
+            {
+              "value": "Україна",
+              "key": "CountryName"
+            },
+            {
+              "value": "Київ",
+              "key": "CountyName"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "https://dom.ria.com/uk/novostroyka-zhk-creator-city-7246/planirovki/?planId=94679&withoutHeaderOffer=true&sectionId=9368&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "img": "",
+      "title": "вул. Дегтярівська\n, 17-19",
+      "link": "https://dom.ria.com/uk/novostroyka-zhk-creator-city-7246/planirovki/?planId=94679&withoutHeaderOffer=true&sectionId=9368&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "address": "Киев, вул. Дегтярівська\n, 17-19",
+      "price": 109840,
+      "floor": 0,
+      "rooms": 2,
+      "square": 93,
+      "source": "bn.ua | индивидуальное отопление",
+      "createdAt": 1612436786802,
+      "geo": {
+        "relevance": 0.85,
+        "locationId": "NT_BRck3iIIch4t8QMT8MUHNB_xcD",
+        "locationType": "point",
+        "displayPosition": {
+          "latitude": 50.46263,
+          "longitude": 30.46261
+        },
+        "navigationPosition": [
+          {
+            "latitude": 50.46285,
+            "longitude": 30.46267
+          }
+        ],
+        "mapView": {
+          "topLeft": {
+            "latitude": 50.4637542,
+            "longitude": 30.4608441
+          },
+          "bottomRight": {
+            "latitude": 50.4615058,
+            "longitude": 30.4643759
+          }
+        },
+        "address": {
+          "label": "Дегтярівська вулиця, 17, Київ, 04119, Україна",
+          "country": "UKR",
+          "county": "Київ",
+          "city": "Київ",
+          "district": "Шевченківський район",
+          "street": "Дегтярівська вулиця",
+          "houseNumber": "17",
+          "postalCode": "04119",
+          "additionalData": [
+            {
+              "value": "Україна",
+              "key": "CountryName"
+            },
+            {
+              "value": "Київ",
+              "key": "CountyName"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "https://dom.ria.com/uk/novostroyka-zhk-creator-city-7246/planirovki/?planId=68209&withoutHeaderOffer=true&sectionId=8224&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "img": "",
+      "title": "вул. Дегтярівська\n, 17-19",
+      "link": "https://dom.ria.com/uk/novostroyka-zhk-creator-city-7246/planirovki/?planId=68209&withoutHeaderOffer=true&sectionId=8224&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "address": "Киев, вул. Дегтярівська\n, 17-19",
+      "price": 99293,
+      "floor": 0,
+      "rooms": 2,
+      "square": 68,
+      "source": "bn.ua | индивидуальное отопление",
+      "createdAt": 1612436786802,
+      "geo": {
+        "relevance": 0.85,
+        "locationId": "NT_BRck3iIIch4t8QMT8MUHNB_xcD",
+        "locationType": "point",
+        "displayPosition": {
+          "latitude": 50.46263,
+          "longitude": 30.46261
+        },
+        "navigationPosition": [
+          {
+            "latitude": 50.46285,
+            "longitude": 30.46267
+          }
+        ],
+        "mapView": {
+          "topLeft": {
+            "latitude": 50.4637542,
+            "longitude": 30.4608441
+          },
+          "bottomRight": {
+            "latitude": 50.4615058,
+            "longitude": 30.4643759
+          }
+        },
+        "address": {
+          "label": "Дегтярівська вулиця, 17, Київ, 04119, Україна",
+          "country": "UKR",
+          "county": "Київ",
+          "city": "Київ",
+          "district": "Шевченківський район",
+          "street": "Дегтярівська вулиця",
+          "houseNumber": "17",
+          "postalCode": "04119",
+          "additionalData": [
+            {
+              "value": "Україна",
+              "key": "CountryName"
+            },
+            {
+              "value": "Київ",
+              "key": "CountyName"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "https://dom.ria.com/uk/novostroyka-zhk-great-greit-6643/planirovki/?planId=103826&withoutHeaderOffer=true&sectionId=6070&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "img": "",
+      "title": "наб. Дніпровська\n, вул. Здолбунівська",
+      "link": "https://dom.ria.com/uk/novostroyka-zhk-great-greit-6643/planirovki/?planId=103826&withoutHeaderOffer=true&sectionId=6070&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "address": "Киев, наб. Дніпровська\n, вул. Здолбунівська",
+      "price": 92887,
       "floor": 0,
       "rooms": 3,
-      "square": 88,
+      "square": 95,
       "source": "bn.ua | индивидуальное отопление",
-      "createdAt": 1612436350501,
+      "createdAt": 1612436786802,
+      "geo": {
+        "relevance": 0.59,
+        "locationId": "NT_hI7B-PiDvPqylg220nRWCC",
+        "locationType": "point",
+        "displayPosition": {
+          "latitude": 50.41871,
+          "longitude": 30.62662
+        },
+        "navigationPosition": [
+          {
+            "latitude": 50.41871,
+            "longitude": 30.62662
+          }
+        ],
+        "mapView": {
+          "topLeft": {
+            "latitude": 50.42583,
+            "longitude": 30.59926
+          },
+          "bottomRight": {
+            "latitude": 50.41086,
+            "longitude": 30.63975
+          }
+        },
+        "address": {
+          "label": "Здолбунівська вулиця, Київ, 02081, Україна",
+          "country": "UKR",
+          "county": "Київ",
+          "city": "Київ",
+          "district": "Дарницький район",
+          "street": "Здолбунівська вулиця",
+          "postalCode": "02081",
+          "additionalData": [
+            {
+              "value": "Україна",
+              "key": "CountryName"
+            },
+            {
+              "value": "Київ",
+              "key": "CountyName"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "https://dom.ria.com/uk/novostroyka-zhk-great-greit-6643/planirovki/?planId=104397&withoutHeaderOffer=true&sectionId=9676&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "img": "",
+      "title": "наб. Дніпровська\n, вул. Здолбунівська",
+      "link": "https://dom.ria.com/uk/novostroyka-zhk-great-greit-6643/planirovki/?planId=104397&withoutHeaderOffer=true&sectionId=9676&utm_source=bn.ua&utm_medium=feed_cpa&utm_campaign=cobrand&project_id=6&r_audience=affiliate_buyers&r_source=bn.ua&r_medium=feed&r_campaign=feed_premium",
+      "address": "Киев, наб. Дніпровська\n, вул. Здолбунівська",
+      "price": 88534,
+      "floor": 0,
+      "rooms": 2,
+      "square": 78,
+      "source": "bn.ua | индивидуальное отопление",
+      "createdAt": 1612436786802,
       "geo": {
         "relevance": 0.59,
         "locationId": "NT_hI7B-PiDvPqylg220nRWCC",

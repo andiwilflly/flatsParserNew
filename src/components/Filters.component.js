@@ -13,9 +13,14 @@ class Filters extends React.Component {
     runParser = async ()=> {
         this.form.isLoadingOffers = true;
 
-        let result = await fetch('http://localhost:4000/start-parser');
-        this.form.isLoadingOffers = false;
-        console.log(await result.text(), '??');
+        try {
+            let result = await fetch('http://localhost:4000/start-parser');
+            this.form.isLoadingOffers = false;
+            console.log(await result.text(), '??');
+        } catch(e) {
+            console.log(e, '??');
+            this.form.isLoadingOffers = false;
+        }
     }
 
     render() {

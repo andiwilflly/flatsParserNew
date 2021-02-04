@@ -4,9 +4,7 @@
 			"name": "bn.ua",
 			"info": "bn.ua | индивидуальное отопление",
 			"url": "https://bn.ua/find/?optype=1&topic_id=2&region_id=5&srch_word=%D0%B8%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5&room_count%5B%5D=2&room_count%5B%5D=3&room_count%5B%5D=4&currency_id=2&price_min=&price=110000&search=&floor_min=&floor_max=&floor_count_min=&square_min=65&square_max=&live_square_min=&live_square_max=&kitchen_square_min=&kitchen_square_max=&id=&phone="
-		}
-	],
-	"inactive": [
+		},
 		{
 			"name": "domik.ua",
 			"info": "domik.ua квартиры",
@@ -18,5 +16,7 @@
 			"url_old": "https://dom.ria.com/uk/search/#category=1&realty_type=2&operation_type=1&state_id=10&city_id=10&inspected=0&period=0&notFirstFloor=0&notLastFloor=0&with_photo=1&photos_count_from=0&links-under-filter=on&fullCategoryOperation=1_2_1&&limit=20&sort=inspected_sort&csrf=Z7nhmvE3-goBHRsV1pFO1SnUXJqPE8gwgj-U&ch=209_f_2,214_f_65,214_t_120,227_f_2,234_t_110000,242_239,247_252,265_0,443_442:1471:1470:1469:1468:1789:1784:1783:435:436:437:1791:441,1644_1644,1645_1645,1650_1649:&wo_dupl=1",
 			"url": "https://dom.ria.com/searchEngine/?realty_type=2&operation_type=1&state_id=10&city_id=10&inspected=0&period=0&notFirstFloor=0&notLastFloor=0&with_photo=1&photos_count_from=0&links-under-filter=on&fullCategoryOperation=1_2_1&&limit=20&sort=inspected_sort&csrf=Z7nhmvE3-goBHRsV1pFO1SnUXJqPE8gwgj-U&ch=209_f_2,214_f_65,214_t_120,227_f_2,234_t_110000,242_239,247_252,265_0,443_442:1471:1470:1469:1468:1789:1784:1783:435:436:437:1791:441,1644_1644,1645_1645,1650_1649:&wo_dupl=1"
 		}
+	],
+	"inactive": [
 	]
 }
