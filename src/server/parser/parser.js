@@ -5,7 +5,8 @@ const geoCoder = require('./utils/geoCoder');
 const parsers = {
     'domik.ua': require('./parsers/domik.ua.parser'),
     'dom.ria': require('./parsers/dom.ria.parser'),
-    'bn.ua': require('./parsers/bn.ua.parser')
+    'bn.ua': require('./parsers/bn.ua.parser'),
+    'olx.ua': require('./parsers/olx.ua.parser')
 };
 
 
