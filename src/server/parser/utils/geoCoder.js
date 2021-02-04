@@ -10,6 +10,7 @@ module.exports = async function(offers) {
     progress.start(offers.length-1, 0);
 
     let parsedOffers = await Promise.all(offers.map(async (offer)=> {
+        if(offer.geo) return offer;
         if(offer.latitude && offer.longitude) {
             progress.increment();
             return {
@@ -46,6 +47,8 @@ module.exports = async function(offers) {
     }));
 
     progress.stop();
+
+    console.log(parsedOffers.length, 'GEOCODER | READY')
     return [
         ...parsedOffers.filter(offer => offer.geo.relevance > 0.50)
     ];

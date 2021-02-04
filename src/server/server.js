@@ -1,10 +1,13 @@
 const low = require('lowdb');
+const cors = require('cors');
 const FileSync = require('lowdb/adapters/FileSync');
 const parser = require('./parser/parser');
-
-
 const express = require('express');
+
+
 const app = express();
+app.use(cors());
+
 const port = 4000;
 
 const adapter = new FileSync('DB.json');
@@ -16,9 +19,9 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/start-parser', (req, res) => {
-    parser.start();
-    res.send('Parser started');
+app.get('/start-parser', async (req, res) => {
+    await parser.start();
+    res.send('Parser ready');
 });
 
 

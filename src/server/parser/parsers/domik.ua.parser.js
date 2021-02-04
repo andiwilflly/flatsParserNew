@@ -2,29 +2,29 @@ const cliProgress = require('cli-progress');
 let progress = null;
 
 
-module.exports = async function(browser, url) {
+module.exports = async function(browser, { url, info }) {
 
-    console.log('✨ DOMIK.UA PARSER:START');
+    console.log(`✨ ${info} PARSER:START`);
    try {
-       const offers = await parsePage(browser, url, 0, []);
+       const offers = await parsePage(browser, url, 0, [], info);
        progress.stop();
        return offers;
    } catch(e) {
-       console.log('✨ DOMIK.UA PAGE ERROR | ', e);
+       console.log(`✨ ${info} PARSER: PAGE ERROR | `, e);
        progress.stop();
-       return {};
+       return [];
    }
 
 }
 
-async function parsePage(browser, url, number = 0, offers = []) {
+async function parsePage(browser, url, number = 0, offers = [], info) {
     const page = await browser.newPage();
     await page.goto(`${url}&page=${number * 35}`, {
         // waitUntil: 'load',
         // timeout: 0
     });
 
-    const totalPages = 1 || Math.round(await page.evaluate(()=> {
+    const totalPages = Math.round(await page.evaluate(()=> {
         return parseInt(document.querySelector('.sort_p_item').innerText);
     }) / 35);
 
@@ -37,7 +37,7 @@ async function parsePage(browser, url, number = 0, offers = []) {
 
     if(totalPages <= number) return offers;
 
-    const rows = await page.evaluate(()=> {
+    const rows = await page.evaluate((_info)=> {
         return [...document.querySelectorAll('.objava') ].map($row => {
             return {
                 id: $row.querySelector('.tittle_obj > a').innerText,
@@ -51,13 +51,13 @@ async function parsePage(browser, url, number = 0, offers = []) {
                 rooms: null,
                 square: +[...$row.querySelectorAll('.objava_detal_info .color-gray')].find($el => $el.innerText.includes('Площадь')).innerText.split(':')[1].split('/')[0],
 
-                source: 'domik.ua'
+                source: _info
             };
         });
-    });
+    }, info);
 
     rows.forEach(row => offers.push(row));
 
     await page.close();
-    return await parsePage(browser, url,number+1, offers);
+    return await parsePage(browser, url,number+1, offers, info);
 }
