@@ -1,6 +1,7 @@
 import React from "react";
 import { observer } from "mobx-react";
 import { observable } from "mobx";
+import DB from "../server/DB.json";
 
 
 class Filters extends React.Component {
@@ -29,6 +30,8 @@ class Filters extends React.Component {
                 <input type="search"
                        placeholder='Поиск по контенту'
                        onChange={ (e)=> console.log(e.target.value) } />
+                <br/>
+                <i style={{ fontSize: 11 }}>всего найдено квартир: { DB.offers.length }</i>
                 <br/>
                 <br/>
                 <button disabled={ this.form.isLoadingOffers }
