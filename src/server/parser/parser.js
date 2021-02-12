@@ -25,7 +25,7 @@ module.exports = {
         console.log('before: ', offers.length);
         offers = [...new Set(offers.map(offer => offer.id))]
             .map(offerId => offers.find(offer => offer.id === offerId))
-            .filter(offer => offer.floor ? offer.floor[0] !== offer.floor[1] : true);
+            // .filter(offer => offer.floor ? offer.floor[0] !== offer.floor[1] : true);
         console.log('after: ', offers.length);
 
         const offersDB = global.DB.get('offers');

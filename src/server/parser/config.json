@@ -2,6 +2,34 @@
 	"parsers": [
 		{
 			"name": "olx.ua",
+			"info": "olx.ua | Шевченковский",
+			"url": "https://www.olx.ua/nedvizhimost/kvartiry-komnaty/prodazha-kvartir-komnat/kiev/?search%5Bfilter_float_price%3Ato%5D=100000&search%5Bfilter_float_price%3Afrom%5D=50000&search%5Bfilter_float_floor%3Afrom%5D=2&search%5Bfilter_float_total_floors%3Afrom%5D=4&search%5Bfilter_float_total_area%3Afrom%5D=65&search%5Bfilter_float_total_area%3Ato%5D=110&search%5Bfilter_float_number_of_rooms%3Afrom%5D=2&search%5Bphotos%5D=1&search%5Bdistrict_id%5D=19&currency=USD"
+		},
+		{
+			"name": "olx.ua",
+			"info": "olx.ua | Соломенский",
+			"url": "https://www.olx.ua/nedvizhimost/kvartiry-komnaty/prodazha-kvartir-komnat/kiev/?search%5Bfilter_float_price%3Ato%5D=100000&search%5Bfilter_float_price%3Afrom%5D=50000&search%5Bfilter_float_floor%3Afrom%5D=2&search%5Bfilter_float_total_floors%3Afrom%5D=4&search%5Bfilter_float_total_area%3Afrom%5D=65&search%5Bfilter_float_total_area%3Ato%5D=110&search%5Bfilter_float_number_of_rooms%3Afrom%5D=2&search%5Bphotos%5D=1&search%5Bdistrict_id%5D=17&currency=USD"
+		},
+		{
+			"name": "bn.ua",
+			"info": "bn.ua | Шевченковский Соломенский",
+			"url": "https://bn.ua/find/?optype=1&has_photo=1&topic_id=2&region_id=5&srch_word=&city_id%5B%5D=4&city_id%5B%5D=12&room_count%5B%5D=2&room_count%5B%5D=3&room_count%5B%5D=4&currency_id=2&price_min=60000&price=100000&search=&floor_min=&floor_max=&not_last_floor=1&floor_count_min=2&square_min=65&square_max=&live_square_min=&live_square_max=&kitchen_square_min=&kitchen_square_max=&id=&phone="
+		},
+		{
+			"name": "domik.ua",
+			"info": "domik.ua | Центр",
+			"url": "http://domik.ua/nedvizhimost/kiev/kupit-kvartiry.html?lim=35&order=date&seq=desc&realtType=kupit-kvartiry&extSrch=1&url_region=kiev&REGIONS%5B%5D=8038900018&REGIONS%5B%5D=8038900017&REGIONS%5B%5D=8038900019&REGIONS%5B%5D=8038900021&REGIONS%5B%5D=8038900020&REGIONS%5B%5D=8039100007&REGIONS%5B%5D=8039100008&REGIONS%5B%5D=8039100009&REGIONS%5B%5D=8039100010&REGIONS%5B%5D=8039100012&REGIONS%5B%5D=8039100011&search_type=kupit-kvartiry&codeSearch=&PRICE_FROM=1500000&PRICE_TO=3200000&PRICE_CLASS=0&oClass%5B%5D=245&oClass%5B%5D=246&oClass%5B%5D=247&oClass%5B%5D=248&oClass%5B%5D=250&oClass%5B%5D=251&oClass%5B%5D=252&oClass%5B%5D=253&DAYS_AGO=0&MITRO%5B%5D=43&MITRO%5B%5D=88&MITRO%5B%5D=56&MITRO%5B%5D=47&MITRO%5B%5D=54&MITRO%5B%5D=45&MITRO_DISTANCE=1000&streetSearch=&HOUSE_NUM=&STOREY_FROM=2&STOREY_TO=&STOREY_NOFIRST=1&STOREY_NOLAST=1&ALL_AREA_FROM=65&ALL_AREA_TO=110&LIV_AREA_FROM=&KIT_AREA_FROM=&LAND_AREA_FROM=&LAND_AREA_TO="
+		},
+		{
+			"name": "dom.ria",
+			"info": "dom.ria | Центр",
+			"url": "https://dom.ria.com/searchEngine/?category=1&realty_type=2&operation_type=1&state_id=10&city_id=10&inspected=0&period=0&notFirstFloor=0&notLastFloor=0&with_photo=1&limit=20&d_id=15185:15189:15190:18182:18183:18184:18185:18186:18200:18201:18203:18204:18205:18206:18207:18208:18209:18210:18211:18212:18213:18214:18215:18216:18217&ch=209_f_2,214_f_65,214_t_100,234_f_60000,234_t_100000,242_239,247_252,265_0,1644_1644,1645_1645&wo_dupl=1"
+
+		}
+	],
+	"inactive": [
+		{
+			"name": "olx.ua",
 			"info": "olx.ua | счетчик на тепло",
 			"url": "https://www.olx.ua/uk/nedvizhimost/kvartiry-komnaty/prodazha-kvartir-komnat/kvartira/kiev/q-счетчик на тепло/?search%5Bfilter_float_price%3Afrom%5D=50000&search%5Bfilter_float_price%3Ato%5D=110000&search%5Bfilter_float_floor%3Afrom%5D=2&search%5Bfilter_float_total_floors%3Afrom%5D=2&search%5Bfilter_float_total_area%3Afrom%5D=65&search%5Bfilter_float_total_area%3Ato%5D=110&search%5Bfilter_float_number_of_rooms%3Afrom%5D=2&search%5Bphotos%5D=1&search%5Bdescription%5D=1&currency=USD"
 		},
@@ -19,9 +47,7 @@
 			"name": "olx.ua",
 			"info": "olx.ua | тепловий счетчик",
 			"url": "https://www.olx.ua/uk/nedvizhimost/kvartiry-komnaty/prodazha-kvartir-komnat/kvartira/kiev/q-тепловий счетчик/?search%5Bfilter_float_price%3Afrom%5D=50000&search%5Bfilter_float_price%3Ato%5D=110000&search%5Bfilter_float_floor%3Afrom%5D=2&search%5Bfilter_float_total_floors%3Afrom%5D=2&search%5Bfilter_float_total_area%3Afrom%5D=65&search%5Bfilter_float_total_area%3Ato%5D=110&search%5Bfilter_float_number_of_rooms%3Afrom%5D=2&search%5Bphotos%5D=1&search%5Bdescription%5D=1&currency=USD"
-		}
-	],
-	"inactive": [
+		},
 		{
 			"name": "olx.ua",
 			"info": "olx.ua | индивидуальное отопление",
@@ -41,7 +67,9 @@
 			"name": "dom.ria",
 			"info": "dom.ria | индивидуальное отопление",
 			"url_old": "https://dom.ria.com/uk/search/#category=1&realty_type=2&operation_type=1&state_id=10&city_id=10&inspected=0&period=0&notFirstFloor=0&notLastFloor=0&with_photo=1&photos_count_from=0&links-under-filter=on&fullCategoryOperation=1_2_1&&limit=20&sort=inspected_sort&csrf=Z7nhmvE3-goBHRsV1pFO1SnUXJqPE8gwgj-U&ch=209_f_2,214_f_65,214_t_120,227_f_2,234_t_110000,242_239,247_252,265_0,443_442:1471:1470:1469:1468:1789:1784:1783:435:436:437:1791:441,1644_1644,1645_1645,1650_1649:&wo_dupl=1",
-			"url": "https://dom.ria.com/searchEngine/?realty_type=2&operation_type=1&state_id=10&city_id=10&inspected=0&period=0&notFirstFloor=0&notLastFloor=0&with_photo=1&photos_count_from=0&links-under-filter=on&fullCategoryOperation=1_2_1&&limit=20&sort=inspected_sort&csrf=Z7nhmvE3-goBHRsV1pFO1SnUXJqPE8gwgj-U&ch=209_f_2,214_f_65,214_t_120,227_f_2,234_t_110000,242_239,247_252,265_0,443_442:1471:1470:1469:1468:1789:1784:1783:435:436:437:1791:441,1644_1644,1645_1645,1650_1649:&wo_dupl=1"
+			"url": "https://dom.ria.com/searchEngine/?realty_type=2&operation_type=1&state_id=10&city_id=10&inspected=0&period=0&notFirstFloor=0&notLastFloor=0&with_photo=1&photos_count_from=0&links-under-filter=on&fullCategoryOperation=1_2_1&limit=20&sort=inspected_sort&csrf=Z7nhmvE3-goBHRsV1pFO1SnUXJqPE8gwgj-U&ch=209_f_2,214_f_65,214_t_120,227_f_2,234_t_110000,242_239,247_252,265_0,443_442:1471:1470:1469:1468:1789:1784:1783:435:436:437:1791:441,1644_1644,1645_1645,1650_1649:&wo_dupl=1",
+			"x": "https://dom.ria.com/searchEngine/?category=1&realty_type=2&operation_type=1&state_id=10&city_id=10&inspected=0&period=0&notFirstFloor=0&notLastFloor=0&with_photo=1&limit=20&d_id=15185:15189:15190:18182:18183:18184:18185:18186:18200:18201:18203:18204:18205:18206:18207:18208:18209:18210:18211:18212:18213:18214:18215:18216:18217&ch=209_f_2,214_f_65,214_t_100,234_f_60000,234_t_100000,242_239,247_252,265_0,1644_1644,1645_1645&wo_dupl=1"
+
 		}
 	]
 }

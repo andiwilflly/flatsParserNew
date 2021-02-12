@@ -28,9 +28,9 @@ async function fetchPage(url, page = 0, allOffers, info) {
 
     offers = offers.map(offer => {
         return {
-            id: offer.description.slice(0, 200),
+            id: offer.description ? offer.description.slice(0, 200) : (offer._id || offer.realty_id || offer.web_id),
             img: 'https://cdn.riastatic.com/photosnewr/ria/dom_news_logo/skolko-nuzhno-kopit-na-kvartiru-v-ukraine-dom-ria-sravnil-czeny-i-zar__213359-620x0.jpg',
-            title: offer.description.slice(0, 50),
+            title: offer.description ? offer.description.slice(0, 200) : offer.realty_id,
             link: `https://dom.ria.com/ru/${offer.beautiful_url}`,
             address: `Киев, ${offer.street_name} ${offer.building_number_str}, ${offer.district_name} район`,
 
