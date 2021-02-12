@@ -74,7 +74,7 @@ class Filters extends React.Component {
                        placeholder='Поиск по контенту'
                        onChange={ this.onSearch } />
                 <br/>
-                <i style={{ fontSize: 11 }}>всего найдено квартир: { DB.offers.length }</i>
+                <i style={{ fontSize: 11 }}>всего найдено квартир: { mapModel.filteredOffers.length }</i>
 
                 <br/>
                 <br/>

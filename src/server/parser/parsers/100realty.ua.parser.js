@@ -8,7 +8,6 @@ module.exports = async function(browser, { url, info }) {
     try {
         const offers = await parsePage(browser, url, 1, [], info);
         progress.stop();
-        console.log(`✨ ${info} PARSER:END`);
         return offers;
     } catch(e) {
         console.log(`✨ ${info} PARSER: PAGE ERROR | `, e);

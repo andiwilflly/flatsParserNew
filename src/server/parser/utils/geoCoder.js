@@ -48,8 +48,8 @@ module.exports = async function(offers) {
 
     progress.stop();
 
+    parsedOffers = parsedOffers.filter(offer => offer.geo.relevance > 0.50);
+
     console.log(parsedOffers.length, 'GEOCODER | READY')
-    return [
-        ...parsedOffers.filter(offer => offer.geo.relevance > 0.50)
-    ];
+    return parsedOffers;
 }

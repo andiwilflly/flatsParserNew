@@ -8,7 +8,6 @@ module.exports = async function(browser, { url, info }) {
     try {
         const offers = await parsePage(browser, url, 1, [], info);
         progress.stop();
-        console.log(`✨ ${info} PARSER:END`);
         return offers;
     } catch(e) {
         console.log(`✨ ${info} PARSER: PAGE ERROR | `, e);
@@ -28,9 +27,7 @@ async function parsePage(browser, url, number = 0, offers = [], info) {
     });
 
     totalPages = totalPages || await page.evaluate(()=> {
-        const $links = document.querySelectorAll('.pager-item');
-        if(!$links) return totalPages;
-        return +$links[$links.length-2].innerText
+        return Math.max(...[...document.querySelectorAll('.pagination_custom li')].map($el => +$el.innerText));
     });
 
     if(!progress) {
@@ -40,28 +37,26 @@ async function parsePage(browser, url, number = 0, offers = [], info) {
         progress.increment();
     }
 
-    if(totalPages <= number) return offers;
+    if(totalPages < number) return offers;
 
     const rows = await page.evaluate((_info)=> {
-        return [...document.querySelectorAll('.realty-object-card') ].map($row => {
-            const link = $row.querySelector('.object-address > a') && $row.querySelector('.object-address > a').getAttribute('href');
-            if(!link) return;
+        return [...document.querySelectorAll('.catalog-item') ].map($row => {
             return {
-                id: $row.querySelector('.object-address > a').innerText,
-                img: $row.querySelector('.slides__item img') ? $row.querySelector('.slides__item img').getAttribute('src') : 'https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png',
-                title: $row.querySelector('.object-address > a').innerText,
-                link: `https://100realty.ua${link}`,
-                address: $row.querySelector('.object-address > a').innerText,
+                id: $row.querySelector('.catalog-item__title a').innerText,
+                img: $row.querySelector('.catalog-item__img img').getAttribute('src'),
+                title: $row.querySelector('.catalog-item__title a').innerText,
+                link: `https://rieltor.ua${$row.querySelector('.catalog-item__title a').getAttribute('href')}`,
+                address: `Киев, ${$row.querySelector('.catalog-item__title a').innerText}`,
 
-                price: parseInt($row.querySelector('.usd-price-value').innerText.replace(/ /g, '').match(/\d+/g)[0]),
+                price: parseInt($row.querySelector('.catalog-item__price').innerText.replace(/ /g, '').match(/\d+/g)[0]),
                 floor: 0,
-                rooms: parseInt($row.querySelector('.object-rooms .value').innerText.replace(/ /g, '').match(/\d+/g)[0]),
-                square: parseInt($row.querySelector('.object-square .value').innerText.replace(/ /g, '').match(/\d+/g)[0]),
-                description: $row.querySelector('.descr').innerText,
+                rooms: '',
+                square: '',
+                description: $row.querySelector('.catalog-item_info-description').innerText,
 
                 source: _info
             }
-        }).filter(Boolean);
+        });
     }, info);
 
     rows.forEach(row => offers.push(row));

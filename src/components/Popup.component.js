@@ -39,7 +39,7 @@ class Popup extends React.Component {
 
                 { offer.square ? <div style={{ fontSize: 10 }}><i>{offer.square} м²</i></div> : null }
                 { offer.floor && offer.floor[0] ? <div style={{ fontSize: 10 }}><i>этаж {offer.floor[0]} из {offer.floor[1]}</i></div> : null }
-                <div style={{ fontSize: 10 }}><i>{ offer.description && offer.description.slice(0, 200) + '...' }</i></div>
+                {/*<div style={{ fontSize: 10 }}><i>{ offer.description && offer.description.slice(0, 200) + '...' }</i></div>*/}
                 <div style={{ fontSize: 10 }}><i>{ offer.geo.address && offer.geo.address.label }</i></div>
                 <div style={{ fontSize: 10, color: offer.color }}><i>({ offer.source })</i></div>
             </div>
