@@ -38,8 +38,20 @@ input {
   top: 10px;
   z-index: 2000;
   right: 10px;
+  width: 300px;
   /*background: whitesmoke;*/
   padding: 5px;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  max-width: 150px;
+  cursor: pointer;
+}
+
+input.checkbox {
+  min-width: auto;
 }
 
 .popup {

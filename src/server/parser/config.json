@@ -1,6 +1,13 @@
 {
 	"parsers": [
 		{
+			"name": "rieltor.ua",
+			"info": "rieltor.ua | Центр",
+			"url": "https://rieltor.ua/flats-sale/?currency=2&price_min=65000&price_max=110000&floor_min=2&common_area_min=65&common_area_max=110&room_cnt%5B0%5D=2&room_cnt%5B1%5D=3&room_cnt%5B2%5D=4&room_cnt%5B3%5D=5&orient%5B0%5D=97&orient%5B1%5D=98&orient%5B2%5D=99&orient%5B3%5D=101&orient%5B4%5D=116&orient%5B5%5D=117&orient%5B6%5D=118&orient%5B7%5D=119&orient%5B8%5D=120&orient%5B9%5D=122&orient%5B10%5D=188&orient%5B11%5D=189&orient%5B12%5D=190&orient%5B13%5D=191&orient%5B14%5D=192&orient%5B15%5D=193&orient%5B16%5D=914&orient%5B17%5D=1263&orient%5B18%5D=1278"
+		}
+	],
+	"active": [
+		{
 			"name": "olx.ua",
 			"info": "olx.ua | Шевченковский",
 			"url": "https://www.olx.ua/nedvizhimost/kvartiry-komnaty/prodazha-kvartir-komnat/kiev/?search%5Bfilter_float_price%3Ato%5D=100000&search%5Bfilter_float_price%3Afrom%5D=50000&search%5Bfilter_float_floor%3Afrom%5D=2&search%5Bfilter_float_total_floors%3Afrom%5D=4&search%5Bfilter_float_total_area%3Afrom%5D=65&search%5Bfilter_float_total_area%3Ato%5D=110&search%5Bfilter_float_number_of_rooms%3Afrom%5D=2&search%5Bphotos%5D=1&search%5Bdistrict_id%5D=19&currency=USD"
@@ -24,7 +31,11 @@
 			"name": "dom.ria",
 			"info": "dom.ria | Центр",
 			"url": "https://dom.ria.com/searchEngine/?category=1&realty_type=2&operation_type=1&state_id=10&city_id=10&inspected=0&period=0&notFirstFloor=0&notLastFloor=0&with_photo=1&limit=20&d_id=15185:15189:15190:18182:18183:18184:18185:18186:18200:18201:18203:18204:18205:18206:18207:18208:18209:18210:18211:18212:18213:18214:18215:18216:18217&ch=209_f_2,214_f_65,214_t_100,234_f_60000,234_t_100000,242_239,247_252,265_0,1644_1644,1645_1645&wo_dupl=1"
-
+		},
+		{
+			"name": "100realty.ua",
+			"info": "100realty.ua | Центр",
+			"url": "https://100realty.ua/realty_search/apartment/sale/m_23%2C30%2C27%2C37%2C41%2C42%2C28%2C25%2C26%2C29/nr_2%2C3%2C4%2C5_/p_65000_110000/cur_4/kch_2"
 		}
 	],
 	"inactive": [

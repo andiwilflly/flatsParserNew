@@ -24,6 +24,7 @@ class MapModel {
     popup = null;
     worker = null;
     dotSize = 20;
+    filteredOffers = DB.offers;
     hoveredOffers = {
         list: [],
         top: 0,
@@ -55,24 +56,7 @@ class MapModel {
 
     setup() {
         const vectorSource = new VectorSource({
-            features: DB.offers.map(offer => {
-                const flatDot = new Feature({
-                    ...offer,
-                    geometry: new Point(fromLonLat([offer.geo.displayPosition.longitude, offer.geo.displayPosition.latitude]))
-                });
-
-                flatDot.setStyle(new Style({
-                    image: new CircleStyle({
-                        radius: 4,
-                        fill: new Fill({
-                            color: Date.now() - offer.createdAt > 86400000 ? 'blue' : 'red'
-                        }),
-                        stroke: new Stroke({ color: 'white', width: 1 })
-                    })
-                }));
-
-                return flatDot;
-            })
+            features: DB.offers.map((offer)=> this.createDot(offer))
         });
 
         this.vectorLayer = new VectorLayer({
@@ -97,6 +81,11 @@ class MapModel {
 
         this.map.on('click', (event)=> {
             const features = this.map.getFeaturesAtPixel(event.pixel);
+
+            // this.vectorLayer.getSource().clear();
+            // this.vectorLayer.getSource().addFeatures(this.filteredOffers.map(offer => {
+            //     this.createDot(offer, !!features.find(f => f.values_.id === offer.id) ? 'gray': null);
+            // }));
 
             console.log(features, 2);
             this.update({
@@ -129,6 +118,26 @@ class MapModel {
             });
             this.map.getViewport().style.cursor = features.length ? 'pointer' : 'inherit';
         });
+    }
+
+
+    createDot = (offer, color)=> {
+        const flatDot = new Feature({
+            ...offer,
+            geometry: new Point(fromLonLat([offer.geo.displayPosition.longitude, offer.geo.displayPosition.latitude]))
+        });
+
+        flatDot.setStyle(new Style({
+            image: new CircleStyle({
+                radius: 4,
+                fill: new Fill({
+                    color: color || (Date.now() - offer.createdAt > 86400000 ? 'blue' : 'red')
+                }),
+                stroke: new Stroke({ color: 'white', width: 1 })
+            })
+        }));
+
+        return flatDot;
     }
 }
 

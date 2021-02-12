@@ -6,7 +6,8 @@ const parsers = {
     'domik.ua': require('./parsers/domik.ua.parser'),
     'dom.ria': require('./parsers/dom.ria.parser'),
     'bn.ua': require('./parsers/bn.ua.parser'),
-    'olx.ua': require('./parsers/olx.ua.parser')
+    'olx.ua': require('./parsers/olx.ua.parser'),
+    '100realty.ua': require('./parsers/100realty.ua.parser')
 };
 
 
