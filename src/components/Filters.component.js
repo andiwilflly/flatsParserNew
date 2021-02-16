@@ -37,21 +37,26 @@ class Filters extends React.Component {
                 mapModel.update({
                     filteredOffers: DB.offers
                 });
-                return this.setFeatures(DB.offers.map(offer => mapModel.createDot(offer)));
+                return mapModel.redraw();
             }
 
             mapModel.update({
                 filteredOffers: this.fuse.search(text).map(offer => offer.item)
             });
-            this.setFeatures(mapModel.filteredOffers.map(offer => mapModel.createDot(offer)));
+            mapModel.redraw();
         }, 400, e.target.value);
     };
 
 
-    setFeatures(features) {
-        mapModel.vectorLayer.getSource().clear();
-        mapModel.vectorLayer.getSource().addFeatures(features);
-    }
+    // onNewClick = (isShowNew)=> {
+    //     mapModel.update({
+    //         filteredOffers: isShowNew ?
+    //             DB.offers.filter(offer => Date.now() - offer.createdAt > 86400000)
+    //             :
+    //             DB.offers.filter(offer => Date.now() - offer.createdAt < 86400000)
+    //     });
+    //     mapModel.redraw();
+    // };
 
 
     runParser = async ()=> {
@@ -75,6 +80,9 @@ class Filters extends React.Component {
                        onChange={ this.onSearch } />
                 <br/>
                 <i style={{ fontSize: 11 }}>всего найдено квартир: { mapModel.filteredOffers.length }</i>
+
+                {/*<br/>*/}
+                {/*<input type="checkbox" onClick={ (e)=> this.onNewClick(e.target.checked) } />*/}
 
                 <br/>
                 <br/>

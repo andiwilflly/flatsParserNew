@@ -1,7 +1,8 @@
+import lowdb from "lowdb";
+import LowdbAdapter from "lowdb/adapters/LocalStorage";
 // MobX
 import { makeAutoObservable, action } from 'mobx';
 import DB from "../server/DB.json";
-// Helpers
 // Map Ol
 import 'ol/ol.css';
 import Feature from 'ol/Feature';
@@ -13,8 +14,6 @@ import { Circle as CircleStyle, Fill, Stroke, Style } from 'ol/style';
 import { fromLonLat } from 'ol/proj';
 import VectorSource from 'ol/source/Vector';
 import OSM from 'ol/source/OSM';
-// Other
-import * as ComLink from "comlink";
 
 
 class MapModel {
@@ -34,7 +33,11 @@ class MapModel {
 
     constructor() {
         makeAutoObservable(this);
-        //this.setupWorker();
+
+        const adapter = new LowdbAdapter();
+        window.db = lowdb(adapter);
+        if(!window.db.get('visitedOffers').value()) window.db.defaults({ visitedOffers: [] }).write();
+
     }
 
 
@@ -45,16 +48,9 @@ class MapModel {
     })
 
 
-    async setupWorker() {
-        this.worker = new Worker( '../map/searchWorker.js');
-        const obj = ComLink.wrap(this.worker);
-        console.log(`Counter: ${await obj.counter}`);
-        await obj.inc();
-        console.log(`Counter: ${await obj.counter}`);
-    }
-
-
     setup() {
+        const offersDB = window.db.get('visitedOffers');
+
         const vectorSource = new VectorSource({
             features: DB.offers.map((offer)=> this.createDot(offer))
         });
@@ -82,12 +78,12 @@ class MapModel {
         this.map.on('click', (event)=> {
             const features = this.map.getFeaturesAtPixel(event.pixel);
 
-            // this.vectorLayer.getSource().clear();
-            // this.vectorLayer.getSource().addFeatures(this.filteredOffers.map(offer => {
-            //     this.createDot(offer, !!features.find(f => f.values_.id === offer.id) ? 'gray': null);
-            // }));
+            features.forEach(feature => {
+                const isVisited = !!offersDB.find({ id: feature.values_.id }).value();
+                if(!isVisited) offersDB.push({ id: feature.values_.id }).write();
+            });
+            setTimeout(()=> this.redraw(), 300);
 
-            console.log(features, 2);
             this.update({
                 hoveredOffers: {
                     list: [],
@@ -96,11 +92,6 @@ class MapModel {
                 },
                 selectedOffers: features
             });
-            // features.forEach(feature => {
-            //     this.flats[feature.values_.link].flat.isVisited = true;
-            // });
-            // this.onSearch({ target: { value: document.querySelector('input').value }});
-            //this.clickedFlats.ids = features.map(feature => feature.values_.link);
         });
 
         this.map.on('pointermove', (event)=> {
@@ -121,17 +112,29 @@ class MapModel {
     }
 
 
-    createDot = (offer, color)=> {
+    redraw() {
+        this.vectorLayer.getSource().clear();
+        this.vectorLayer.getSource().addFeatures(this.filteredOffers.map((offer)=> this.createDot(offer)));
+    }
+
+
+    createDot = (offer)=> {
         const flatDot = new Feature({
             ...offer,
             geometry: new Point(fromLonLat([offer.geo.displayPosition.longitude, offer.geo.displayPosition.latitude]))
         });
 
+        const isVisited = window.db.get('visitedOffers').find({ id: offer.id }).value();
+
+        // 86400000
         flatDot.setStyle(new Style({
             image: new CircleStyle({
                 radius: 4,
                 fill: new Fill({
-                    color: color || (Date.now() - offer.createdAt > 86400000 ? 'blue' : 'red')
+                    color: isVisited ?
+                        'gray'
+                        :
+                        (Date.now() - offer.createdAt > 46400000 ? 'blue' : 'red')
                 }),
                 stroke: new Stroke({ color: 'white', width: 1 })
             })

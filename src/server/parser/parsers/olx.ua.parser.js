@@ -4,9 +4,11 @@ const recognizeAddress = require('../utils/recognizeAddress');
 
 let progress = null;
 
-
+let totalPages = 0;
 module.exports = async function(browser, { url, info }) {
 
+    progress = null;
+    totalPages = 0;
     console.log(`✨ ${info} PARSER:START`);
    try {
        const offers = await parsePage(browser, url, 0, [], info);
@@ -20,11 +22,11 @@ module.exports = async function(browser, { url, info }) {
 
 }
 
-let totalPages = 0;
+
 async function parsePage(browser, url, number = 0, offers = [], info) {
     const page = await browser.newPage();
     await page.goto(`${url}&page=${number}`, {
-        waitUntil: 'networkidle2'
+       // waitUntil: 'networkidle2'
     });
 
     totalPages = totalPages || await page.evaluate(()=> {
@@ -38,7 +40,10 @@ async function parsePage(browser, url, number = 0, offers = [], info) {
         progress.update(number);
     }
 
-    if(totalPages <= number) return offers;
+    if(totalPages <= number) {
+        await page.close();
+        return offers;
+    }
 
     let rows = await page.evaluate((_info)=> {
         return [...document.querySelectorAll('#offers_table tr.wrap') ].map($row => {
