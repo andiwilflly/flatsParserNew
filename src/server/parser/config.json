@@ -1,6 +1,11 @@
 {
 	"parsers": [
 		{
+			"name": "blagovist.ua",
+			"info": "blagovist.ua | Центр",
+			"url": "https://blagovist.ua/uk/search/apartment/sale/r_1000009%2C1002558%2C1003753%2C201326616%2C1002247%2C1002855%2C201326606%2C1000008%2C1000015%2C1003023%2C1002253%2C1003504/nr_2%2C3%2C4%2C5_/st_65_110/f_notfirst%2Cnotlast/p_65000_110000/cur_4/kch_2"
+		},
+		{
 			"name": "olx.ua",
 			"info": "olx.ua | Шевченковский",
 			"url": "https://www.olx.ua/uk/nedvizhimost/kvartiry-komnaty/prodazha-kvartir-komnat/kvartira/kiev/?search%5Bfilter_float_price%3Afrom%5D=50000&search%5Bfilter_float_price%3Ato%5D=110000&search%5Bfilter_float_floor%3Afrom%5D=2&search%5Bfilter_float_total_floors%3Afrom%5D=2&search%5Bfilter_float_total_area%3Afrom%5D=65&search%5Bfilter_float_total_area%3Ato%5D=110&search%5Bfilter_float_number_of_rooms%3Afrom%5D=2&search%5Bfilter_float_number_of_rooms%3Ato%5D=5&search%5Bdistrict_id%5D=19&currency=USD"

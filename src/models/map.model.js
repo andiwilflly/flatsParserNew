@@ -81,8 +81,8 @@ class MapModel {
             features.forEach(feature => {
                 const isVisited = !!offersDB.find({ id: feature.values_.id }).value();
                 if(!isVisited) offersDB.push({ id: feature.values_.id }).write();
+                this.updateDot(feature);
             });
-            setTimeout(()=> this.redraw(), 300);
 
             this.update({
                 hoveredOffers: {
@@ -115,6 +115,19 @@ class MapModel {
     redraw() {
         this.vectorLayer.getSource().clear();
         this.vectorLayer.getSource().addFeatures(this.filteredOffers.map((offer)=> this.createDot(offer)));
+    }
+
+
+    updateDot(feature) {
+        feature.setStyle(new Style({
+            image: new CircleStyle({
+                radius: 4,
+                fill: new Fill({
+                    color: 'gray'
+                }),
+                stroke: new Stroke({ color: 'white', width: 1 })
+            })
+        }));
     }
 
 

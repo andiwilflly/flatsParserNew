@@ -24,7 +24,7 @@ async function parsePage(browser, url, number = 0, offers = [], info) {
         // timeout: 0
     });
 
-    const totalPages = Math.round(await page.evaluate(()=> {
+    const totalPages = Math.ceil(await page.evaluate(()=> {
         return parseInt(document.querySelector('.sort_p_item').innerText);
     }) / 35);
 

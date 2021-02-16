@@ -8,7 +8,8 @@ const parsers = {
     'bn.ua': require('./parsers/bn.ua.parser'),
     'olx.ua': require('./parsers/olx.ua.parser'),
     '100realty.ua': require('./parsers/100realty.ua.parser'),
-    'rieltor.ua': require('./parsers/rieltor.ua.parser')
+    'rieltor.ua': require('./parsers/rieltor.ua.parser'),
+    'blagovist.ua': require('./parsers/blagovist.ua.parser')
 };
 
 
