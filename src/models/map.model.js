@@ -1,4 +1,5 @@
 import lowdb from "lowdb";
+import Fuse from "fuse.js";
 import LowdbAdapter from "lowdb/adapters/LocalStorage";
 // MobX
 import { makeAutoObservable, action } from 'mobx';
@@ -23,6 +24,11 @@ class MapModel {
     popup = null;
     worker = null;
     dotSize = 20;
+    filters = {
+        isShowOnlyNew: false,
+        query: ''
+    };
+
     filteredOffers = DB.offers;
     hoveredOffers = {
         list: [],
@@ -30,6 +36,20 @@ class MapModel {
         left: 0
     };
     selectedOffers = [];
+
+
+    fuse = new Fuse(DB.offers, {
+        shouldSort: true,
+        includeScore: true,
+        includeMatches: true,
+        threshold: 0.2,
+        location: 0,
+        distance: 200,
+        maxPatternLength: 200,
+        minMatchCharLength: 3,
+        keys: ["title", 'address', 'source', 'square', 'description']
+    });
+
 
     constructor() {
         makeAutoObservable(this);
@@ -113,8 +133,20 @@ class MapModel {
 
 
     redraw() {
-        this.vectorLayer.getSource().clear();
-        this.vectorLayer.getSource().addFeatures(this.filteredOffers.map((offer)=> this.createDot(offer)));
+        setTimeout(()=> {
+            // Query filters
+            let filteredOffers = this.filters.query.length <= 2 ?
+                DB.offers
+                :
+                this.fuse.search(this.filters.query).map(offer => offer.item);
+
+            // Old/new filters
+            if(this.filters.isShowOnlyNew) filteredOffers = filteredOffers.filter(offer => Date.now() - offer.createdAt < 46400000);
+
+            this.update({ filteredOffers });
+            this.vectorLayer.getSource().clear();
+            this.vectorLayer.getSource().addFeatures(this.filteredOffers.map((offer)=> this.createDot(offer)));
+        }, 15);
     }
 
 

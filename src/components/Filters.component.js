@@ -1,4 +1,3 @@
-import Fuse from 'fuse.js';
 import React from "react";
 import { observer } from "mobx-react";
 import { observable } from "mobx";
@@ -15,48 +14,30 @@ class Filters extends React.Component {
     });
 
 
-    fuse = new Fuse(DB.offers, {
-        shouldSort: true,
-        includeScore: true,
-        includeMatches: true,
-        threshold: 0.2,
-        location: 0,
-        distance: 200,
-        maxPatternLength: 200,
-        minMatchCharLength: 3,
-        keys: ["title", 'address', 'source', 'square', 'description']
-    });
-
-
-
     timeout = null;
     onSearch = (e)=> {
         clearTimeout(this.timeout);
         this.timeout = setTimeout((text)=> {
-            if(text.length < 2) {
-                mapModel.update({
-                    filteredOffers: DB.offers
-                });
-                return mapModel.redraw();
-            }
-
             mapModel.update({
-                filteredOffers: this.fuse.search(text).map(offer => offer.item)
+                filters: {
+                    ...mapModel.filters,
+                    query: text
+                }
             });
             mapModel.redraw();
         }, 400, e.target.value);
     };
 
 
-    // onNewClick = (isShowNew)=> {
-    //     mapModel.update({
-    //         filteredOffers: isShowNew ?
-    //             DB.offers.filter(offer => Date.now() - offer.createdAt > 86400000)
-    //             :
-    //             DB.offers.filter(offer => Date.now() - offer.createdAt < 86400000)
-    //     });
-    //     mapModel.redraw();
-    // };
+    onNewClick = (isShowOnlyNew)=> {
+        mapModel.update({
+            filters: {
+                ...mapModel.filters,
+                isShowOnlyNew
+            }
+        });
+        mapModel.redraw();
+    };
 
 
     runParser = async ()=> {
@@ -81,8 +62,16 @@ class Filters extends React.Component {
                 <br/>
                 <i style={{ fontSize: 11 }}>всего найдено квартир: { mapModel.filteredOffers.length }</i>
 
-                {/*<br/>*/}
-                {/*<input type="checkbox" onClick={ (e)=> this.onNewClick(e.target.checked) } />*/}
+                <br/>
+                <br/>
+                <label htmlFor="new">
+                    Показывать только новые
+                    <input type="checkbox"
+                           className='checkbox'
+                           id='new'
+                           value={ mapModel.isShowOnlyNew }
+                           onClick={ (e)=> this.onNewClick(e.target.checked) } />
+                </label>
 
                 <br/>
                 <br/>

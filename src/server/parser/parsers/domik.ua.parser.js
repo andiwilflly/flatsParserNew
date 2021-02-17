@@ -40,7 +40,7 @@ async function parsePage(browser, url, number = 0, offers = [], info) {
     const rows = await page.evaluate((_info)=> {
         return [...document.querySelectorAll('.objava') ].map($row => {
             return {
-                id: $row.querySelector('.tittle_obj > a').innerText,
+                id: $row.querySelector('.image').getAttribute('src'),
                 img: `http://domik.ua${$row.querySelector('.image').getAttribute('src')}`,
                 title: $row.querySelector('.tittle_obj > a').innerText,
                 link: `http://domik.ua${$row.querySelector('.tittle_obj > a').getAttribute('href')}`,

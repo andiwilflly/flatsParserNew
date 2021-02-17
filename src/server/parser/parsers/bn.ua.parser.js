@@ -48,7 +48,7 @@ async function parsePage(browser, url, number = 0, offers = [], info) {
 
             if(isNotReady) return null;
             return {
-                id: link.startsWith('http') ? link : `https://bn.ua${link}`,
+                id: (link.startsWith('http') ? link : `https://bn.ua${link}`) + $item.querySelector('.listingv2-param-addr').innerText,
                 img: $img ? `https://bn.ua${$img.getAttribute('src')}` : '',
                 title: $item.querySelector('.listingv2-param-addr').innerText,
                 link: link.startsWith('http') ? link : `https://bn.ua${link}`,

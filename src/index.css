@@ -46,8 +46,11 @@ input {
 label {
   display: flex;
   justify-content: space-between;
-  max-width: 150px;
+  width: 80%;
+  align-items: center;
   cursor: pointer;
+  font-size: 12px;
+  white-space: nowrap;
 }
 
 input.checkbox {

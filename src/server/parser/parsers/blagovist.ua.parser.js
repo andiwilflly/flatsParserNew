@@ -47,7 +47,7 @@ async function parsePage(browser, url, number = 0, offers = [], info) {
     let rows = await page.evaluate((_info)=> {
         return [...document.querySelectorAll('.search-item')].map($row => {
             return {
-                id: $row.querySelector('.h4').innerText,
+                id: $row.querySelector('.h4 a').getAttribute('href'),
                 img: $row.querySelectorAll('img')[1].getAttribute('src'),
                 title: $row.querySelector('.h4').innerText,
                 link: $row.querySelector('.h4 a').getAttribute('href'),

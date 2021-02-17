@@ -2,8 +2,10 @@ const cliProgress = require('cli-progress');
 let progress = null;
 
 
+let totalPages = 0;
 module.exports = async function(browser, { url, info }) {
-
+    progress = null;
+    totalPages = 0;
     console.log(`✨ ${info} PARSER:START`);
     try {
         const offers = await parsePage(browser, url, 1, [], info);
@@ -18,7 +20,6 @@ module.exports = async function(browser, { url, info }) {
 }
 
 
-let totalPages = 0;
 async function parsePage(browser, url, number = 0, offers = [], info) {
     const page = await browser.newPage();
     await page.goto(`${url}?page=${number}`, {
@@ -34,7 +35,7 @@ async function parsePage(browser, url, number = 0, offers = [], info) {
 
     if(!progress) {
         progress = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
-        progress.start(totalPages, 0);
+        progress.start(totalPages-1, 0);
     } else {
         progress.increment();
     }
@@ -46,7 +47,7 @@ async function parsePage(browser, url, number = 0, offers = [], info) {
             const link = $row.querySelector('.object-address > a') && $row.querySelector('.object-address > a').getAttribute('href');
             if(!link) return;
             return {
-                id: $row.querySelector('.object-address > a').innerText,
+                id: link,
                 img: $row.querySelector('.slides__item img') ? $row.querySelector('.slides__item img').getAttribute('src') : 'https://www.samsung.com/etc/designs/smg/global/imgs/support/cont/NO_IMG_600x600.png',
                 title: $row.querySelector('.object-address > a').innerText,
                 link: `https://100realty.ua${link}`,
