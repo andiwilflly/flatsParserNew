@@ -4,6 +4,7 @@ let progress = null;
 
 module.exports = async function(browser, { url, info }) {
 
+    progress = null;
     console.log(`✨ ${info} PARSER:START`);
    try {
        const offers = await parsePage(browser, url, 0, [], info);

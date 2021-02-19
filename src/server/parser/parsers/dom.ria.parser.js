@@ -18,7 +18,7 @@ async function fetchPage(url, page = 0, allOffers, info) {
 
     if(!progress) {
         progress = new cliProgress.SingleBar({}, cliProgress.Presets.shades_classic);
-        progress.start(Math.ceil(offers.count / 20), 0);
+        progress.start(Math.ceil(offers.count / 20)-1, 0);
     }
 
     offers = offers.items;

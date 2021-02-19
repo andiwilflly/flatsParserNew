@@ -9,7 +9,8 @@ const parsers = {
     'olx.ua': require('./parsers/olx.ua.parser'),
     '100realty.ua': require('./parsers/100realty.ua.parser'),
     'rieltor.ua': require('./parsers/rieltor.ua.parser'),
-    'blagovist.ua': require('./parsers/blagovist.ua.parser')
+    'blagovist.ua': require('./parsers/blagovist.ua.parser'),
+    'parklane.ua': require('./parsers/parklane.ua.parser')
 };
 
 
@@ -46,6 +47,13 @@ module.exports = {
         // Save new offers to DB
         newOffers = await geoCoder(newOffers);
         newOffers.forEach(offer => offersDB.push(offer).write());
+
+        const types = [ ...oldOffers, ...newOffers].reduce((res, offer)=> {
+            res[offer.source.split('|')[0]] = res[offer.source.split('|')[0]] ? res[offer.source.split('|')[0]] + 1 : 1;
+            return res;
+        }, {});
+
+        console.table(types);
 
         console.log('offers: ', offers.length, 'oldOffers:', oldOffers.length, 'newOffers (filtered)', newOffers.length);
     },
