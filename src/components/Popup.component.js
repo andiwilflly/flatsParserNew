@@ -35,13 +35,12 @@ class Popup extends React.Component {
                              maxHeight: size - 5
                          }} />
                 </div>
-                <b style={{ fontSize: 10 }}>{ formatDistance(new Date(offer.createdAt), new Date()) }</b>
 
-                { offer.square ? <div style={{ fontSize: 10 }}><i>{offer.square} м²</i></div> : null }
+                { offer.square ? <div style={{ fontSize: 10 }}><b>{offer.square} м²</b></div> : null }
                 { offer.floor && offer.floor[0] ? <div style={{ fontSize: 10 }}><i>этаж {offer.floor[0]} из {offer.floor[1]}</i></div> : null }
                 {/*<div style={{ fontSize: 10 }}><i>{ offer.description && offer.description.slice(0, 200) + '...' }</i></div>*/}
-                <div style={{ fontSize: 10 }}><i>{ offer.geo.address && offer.geo.address.label }</i></div>
-                <div style={{ fontSize: 10, color: offer.color }}><i>({ offer.source })</i></div>
+                {/*<div style={{ fontSize: 10 }}><i>{ offer.geo.address && offer.geo.address.label }</i></div>*/}
+                <div style={{ fontSize: 10, color: 'green' }}>({ offer.source })</div>
             </div>
         );
     }
