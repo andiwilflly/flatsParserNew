@@ -19,13 +19,14 @@ import OSM from 'ol/source/OSM';
 
 class MapModel {
 
+    newMs = 86400000;
     map = null;
     layer = null;
     popup = null;
     worker = null;
     dotSize = 20;
     filters = {
-        isShowOnlyNew: false,
+        isShowOnlyNew: true,
         query: ''
     };
 
@@ -141,7 +142,7 @@ class MapModel {
                 this.fuse.search(this.filters.query).map(offer => offer.item);
 
             // Old/new filters
-            if(this.filters.isShowOnlyNew) filteredOffers = filteredOffers.filter(offer => Date.now() - offer.createdAt < 46400000);
+            if(this.filters.isShowOnlyNew) filteredOffers = filteredOffers.filter(offer => Date.now() - offer.createdAt < this.newMs);
 
             this.update({ filteredOffers });
             this.vectorLayer.getSource().clear();
@@ -179,7 +180,7 @@ class MapModel {
                     color: isVisited ?
                         'gray'
                         :
-                        (Date.now() - offer.createdAt > 46400000 ? 'blue' : 'red')
+                        (Date.now() - offer.createdAt > this.newMs ? 'blue' : 'red')
                 }),
                 stroke: new Stroke({ color: 'white', width: 1 })
             })

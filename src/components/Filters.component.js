@@ -69,7 +69,7 @@ class Filters extends React.Component {
                     <input type="checkbox"
                            className='checkbox'
                            id='new'
-                           value={ mapModel.isShowOnlyNew }
+                           value={ mapModel.filters.isShowOnlyNew }
                            onClick={ (e)=> this.onNewClick(e.target.checked) } />
                 </label>
 
