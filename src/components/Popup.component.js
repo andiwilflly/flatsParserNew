@@ -13,13 +13,25 @@ class Popup extends React.Component {
         offer = offer.values_;
 
         return (
-            <div key={ offer.id } style={{ marginBottom: 10, padding: 3 }}>
+            <div key={ offer.id } style={{ marginBottom: 10, padding: 3, position: 'relative' }}>
                 <a href={ offer.link }
                    target="_blank"
                    style={{ fontSize: 12 }}>{ offer.address }</a>
                 <div>
                     <b style={{ color: '#ff6a16', fontSize: 12 }}>{ formatter.format(offer.price) }</b>
                 </div>
+
+                { Date.now() - offer.createdAt < mapModel.newMs ?
+                    <div style={{
+                        position: 'absolute',
+                        top: 0,
+                        right: 0,
+                        left: 0,
+                        height: 5,
+                        background: 'orange'
+                    }} />
+                    : null }
+
                 <div style={{
                     width: size,
                     display: 'flex',
