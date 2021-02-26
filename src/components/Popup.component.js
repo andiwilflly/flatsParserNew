@@ -2,6 +2,7 @@ import React from "react";
 import { formatDistance } from 'date-fns';
 import { observer } from 'mobx-react';
 import mapModel from "../models/map.model";
+// import mapModel2 from "../models/eb/alka.live";
 
 
 const formatter = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'USD' });
@@ -49,6 +50,7 @@ class Popup extends React.Component {
                 </div>
 
                 { offer.square ? <div style={{ fontSize: 10 }}><b>{offer.square} м²</b></div> : null }
+                { offer.rooms ? <div style={{ fontSize: 10 }}><i>комнат { offer.rooms }</i></div> : null }
                 { offer.floor && offer.floor[0] ? <div style={{ fontSize: 10 }}><i>этаж {offer.floor[0]} из {offer.floor[1]}</i></div> : null }
                 {/*<div style={{ fontSize: 10 }}><i>{ offer.description && offer.description.slice(0, 200) + '...' }</i></div>*/}
                 {/*<div style={{ fontSize: 10 }}><i>{ offer.geo.address && offer.geo.address.label }</i></div>*/}

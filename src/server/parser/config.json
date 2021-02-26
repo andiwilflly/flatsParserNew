@@ -1,6 +1,11 @@
 {
 	"parsers": [
 		{
+			"name": "flatfy.ua",
+			"info": "flatfy.ua | Центр Оболонь",
+			"url": "https://flatfy.ua/uk/search?area_max=110&area_min=70&built_year_min=1970&floor_count_min=4&geo_id=1&is_not_first_floor=true&last_floor=no&price_max=110000&price_min=70000&room_count=3&room_count=4&room_count=5&section_id=1&sort=insert_time&sub_geo_id=28757&sub_geo_id=28756&sub_geo_id=28753&sub_geo_id=28752&sub_geo_id=28751"
+		},
+		{
 			"name": "parklane.ua",
 			"info": "parklane.ua | Центр Оболонь",
 			"url": "https://parklane.ua/uk/realty_search/apartment/sale/r_1002247,1002249,1003326,1003327,1003503,1003504,1003705,1003712,1003753,201326616/nr_3,4,5_/st_70_110/f_notfirst,notlast/p_65000_110000/cur_4/kch_2"

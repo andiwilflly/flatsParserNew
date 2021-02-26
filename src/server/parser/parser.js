@@ -10,7 +10,8 @@ const parsers = {
     '100realty.ua': require('./parsers/100realty.ua.parser'),
     'rieltor.ua': require('./parsers/rieltor.ua.parser'),
     'blagovist.ua': require('./parsers/blagovist.ua.parser'),
-    'parklane.ua': require('./parsers/parklane.ua.parser')
+    'parklane.ua': require('./parsers/parklane.ua.parser'),
+    'flatfy.ua': require('./parsers/flatfy.ua.parser')
 };
 
 
