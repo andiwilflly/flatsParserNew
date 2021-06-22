@@ -30,16 +30,21 @@ module.exports = async function(offers) {
             return fetch(geoCoderUrl(offer.address))
                 .then(response => response.json())
                 .then(geo => {
-                    progress.increment();
+                    try {
+                        progress.increment();
 
-                    if(!geo.response.view[0]) return { geo: { relevance: 0 } };
-                    return {
-                        ...offer,
-                        geo: {
-                            relevance: geo.response.view[0].result[0].relevance,
-                            ...geo.response.view[0].result[0].location
+                        if(!geo.response.view[0]) return { geo: { relevance: 0 } };
+                        return {
+                            ...offer,
+                            geo: {
+                                relevance: geo.response.view[0].result[0].relevance,
+                                ...geo.response.view[0].result[0].location
+                            }
                         }
+                    } catch {
+                        return { geo: { relevance: 0 } };
                     }
+
                 })
         } catch(e) {
             return { geo: { relevance: -1 } };
