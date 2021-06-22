@@ -1,6 +1,6 @@
-const low = require('lowdb');
+const { JsonDB } = require('node-json-db');
+const { Config } = require('node-json-db/dist/lib/JsonDBConfig');
 const cors = require('cors');
-const FileSync = require('lowdb/adapters/FileSync');
 const parser = require('./parser/parser');
 const express = require('express');
 
@@ -10,8 +10,12 @@ app.use(cors());
 
 const port = 4000;
 
-const adapter = new FileSync('DB.json');
-global.DB = low(adapter);
+global.DB = new JsonDB(new Config("./src/server/DB", false, true, '/'));
+try {
+    global.DB.getData('/offers')
+} catch {
+    global.DB.push("/offers", []);
+}
 
 
 app.get('/', (req, res) => {
@@ -20,8 +24,8 @@ app.get('/', (req, res) => {
 
 
 app.get('/start-parser', async (req, res) => {
-    await parser.start();
-    res.send('Parser ready');
+    const offersLength = await parser.start();
+    res.send('Parser ready' + offersLength);
 });
 
 

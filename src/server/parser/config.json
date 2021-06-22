@@ -1,49 +1,19 @@
 {
 	"parsers": [
 		{
-			"name": "dom.ria",
-			"info": "dom.ria | Центр",
-			"url": "https://dom.ria.com/searchEngine/?category=1&realty_type=2&operation_type=1&state_id=10&city_id=10&inspected=0&period=0&notFirstFloor=0&notLastFloor=0&with_photo=1&limit=20&d_id=15185:15189:15190:18182:18183:18184:18185:18186:18200:18201:18203:18204:18205:18206:18207:18208:18209:18210:18211:18212:18213:18214:18215:18216:18217&ch=209_f_2,214_f_65,214_t_100,234_f_60000,234_t_100000,242_239,247_252,265_0,1644_1644,1645_1645&wo_dupl=1"
-		},
-		{
 			"name": "flatfy.ua",
 			"info": "flatfy.ua | Центр Оболонь",
 			"url": "https://flatfy.ua/uk/search?area_max=110&area_min=70&built_year_min=1970&floor_count_min=4&geo_id=1&is_not_first_floor=true&last_floor=no&price_max=110000&price_min=70000&room_count=3&room_count=4&room_count=5&section_id=1&sort=insert_time&sub_geo_id=28757&sub_geo_id=28756&sub_geo_id=28753&sub_geo_id=28752&sub_geo_id=28751"
 		},
 		{
-			"name": "parklane.ua",
-			"info": "parklane.ua | Центр Оболонь",
-			"url": "https://parklane.ua/uk/realty_search/apartment/sale/r_1002247,1002249,1003326,1003327,1003503,1003504,1003705,1003712,1003753,201326616/nr_3,4,5_/st_70_110/f_notfirst,notlast/p_65000_110000/cur_4/kch_2"
-		},
-		{
-			"name": "blagovist.ua",
-			"info": "blagovist.ua | Центр,  Оболонь",
-			"url": "https://blagovist.ua/uk/search/apartment/sale/r_1000008,1000009,1000015,1002247,1002253,1002558,1002855,1003023,1003504,1003753,201326606,201326616/nr_3,4,5_/st_70_110/f_notfirst,notlast/p_65000_110000/cur_4/kch_2"
-		},
-		{
 			"name": "olx.ua",
-			"info": "olx.ua | Оболонь",
-			"url": "https://www.olx.ua/nedvizhimost/kvartiry-komnaty/prodazha-kvartir-komnat/kvartira/kiev/?search%5Bfilter_float_price%3Afrom%5D=65000&search%5Bfilter_float_price%3Ato%5D=110000&search%5Bfilter_float_floor%3Afrom%5D=2&search%5Bfilter_float_total_floors%3Afrom%5D=2&search%5Bfilter_float_total_area%3Afrom%5D=70&search%5Bfilter_float_total_area%3Ato%5D=110&search%5Bfilter_float_number_of_rooms%3Afrom%5D=2&search%5Bphotos%5D=1&search%5Bdistrict_id%5D=9&currency=USD"
+			"info": "olx.ua | счетчик на тепло",
+			"url": "https://www.olx.ua/uk/nedvizhimost/kvartiry-komnaty/prodazha-kvartir-komnat/kvartira/kiev/q-счетчик на тепло/?search%5Bfilter_float_price%3Afrom%5D=50000&search%5Bfilter_float_price%3Ato%5D=110000&search%5Bfilter_float_floor%3Afrom%5D=2&search%5Bfilter_float_total_floors%3Afrom%5D=2&search%5Bfilter_float_total_area%3Afrom%5D=70&search%5Bfilter_float_total_area%3Ato%5D=110&search%5Bfilter_float_number_of_rooms%3Afrom%5D=3&search%5Bphotos%5D=1&search%5Bdescription%5D=1&currency=USD"
 		},
 		{
-			"name": "rieltor.ua",
-			"info": "rieltor.ua | Центр",
-			"url": "https://rieltor.ua/flats-sale/?currency=2&price_min=65000&price_max=110000&floor_min=2&common_area_min=70&common_area_max=110&room_cnt%5B1%5D=3&room_cnt%5B2%5D=4&room_cnt%5B3%5D=5&orient%5B0%5D=97&orient%5B1%5D=98&orient%5B2%5D=99&orient%5B3%5D=101&orient%5B4%5D=116&orient%5B5%5D=117&orient%5B6%5D=118&orient%5B7%5D=119&orient%5B8%5D=120&orient%5B9%5D=122&orient%5B10%5D=188&orient%5B11%5D=189&orient%5B12%5D=190&orient%5B13%5D=191&orient%5B14%5D=192&orient%5B15%5D=193&orient%5B16%5D=914&orient%5B17%5D=1263&orient%5B18%5D=1278"
-		},
-		{
-			"name": "bn.ua",
-			"info": "bn.ua | Шевченковский Соломенский Оболонь",
-			"url": "https://bn.ua/find/?optype=1&has_photo=1&topic_id=2&region_id=5&srch_word=&city_id%5B%5D=8&city_id%5B%5D=4&city_id%5B%5D=12&room_count%5B%5D=3&room_count%5B%5D=4&currency_id=2&price_min=65000&price=100000&search=&floor_min=&floor_max=&not_last_floor=1&floor_count_min=2&square_min=70&square_max=&live_square_min=&live_square_max=&kitchen_square_min=&kitchen_square_max=&id=&phone="
-		},
-		{
-			"name": "domik.ua",
-			"info": "domik.ua | Центр",
-			"url": "http://domik.ua/nedvizhimost/kiev/kupit-kvartiry.html?lim=35&order=date&seq=desc&realtType=kupit-kvartiry&extSrch=1&url_region=kiev&REGIONS%5B%5D=8036100029&REGIONS%5B%5D=8038200013&REGIONS%5B%5D=8038200014&REGIONS%5B%5D=8038200015&REGIONS%5B%5D=8039100012&search_type=kupit-kvartiry&codeSearch=&PRICE_FROM=1500000&PRICE_TO=3200000&PRICE_CLASS=0&oClass%5B%5D=245&oClass%5B%5D=246&oClass%5B%5D=247&oClass%5B%5D=248&oClass%5B%5D=250&oClass%5B%5D=251&oClass%5B%5D=252&oClass%5B%5D=253&DAYS_AGO=0&OPC%5B%5D=11&OPC%5B%5D=2&MITRO_DISTANCE=&streetSearch=&HOUSE_NUM=&STOREY_FROM=2&STOREY_TO=&STOREY_NOFIRST=1&STOREY_NOLAST=1&ALL_AREA_FROM=70&ALL_AREA_TO=110&LIV_AREA_FROM=&KIT_AREA_FROM=&LAND_AREA_FROM=&LAND_AREA_TO="
-		},
-		{
-			"name": "100realty.ua",
-			"info": "100realty.ua | Центр Оболонь Левый берег",
-			"url": "https://100realty.ua/uk/realty_search/apartment/sale/r_1000009,1000016,1002249,1002253,1002558,1002773,1003091,1003200,1003504,1003753,1003754,201326621,385875970,385875971,385876149/nr_3,4,5_/st_65_110/f_notfirst,notlast/p_65000_110000/cur_4/kch_2"
+			"name": "dom.ria",
+			"info": "dom.ria | Центр",
+			"url": "https://dom.ria.com/searchEngine/?category=1&realty_type=2&operation_type=1&state_id=10&city_id=10&inspected=0&period=0&notFirstFloor=0&notLastFloor=0&with_photo=1&limit=20&d_id=15185:15189:15190:18182:18183:18184:18185:18186:18200:18201:18203:18204:18205:18206:18207:18208:18209:18210:18211:18212:18213:18214:18215:18216:18217&ch=209_f_2,214_f_65,214_t_100,234_f_60000,234_t_100000,242_239,247_252,265_0,1644_1644,1645_1645&wo_dupl=1"
 		}
 	],
 	"active": [
