@@ -11,7 +11,7 @@ module.exports = async function(browser, { url, info }) {
         return offers;
     } catch(e) {
         console.log(`✨ ${info} PARSER: PAGE ERROR | `, e);
-        progress.stop();
+        if(progress) progress.stop();
         return [];
     }
 

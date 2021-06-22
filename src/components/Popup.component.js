@@ -2,7 +2,6 @@ import React from "react";
 import { formatDistance } from 'date-fns';
 import { observer } from 'mobx-react';
 import mapModel from "../models/map.model";
-// import mapModel2 from "../models/eb/alka.live";
 
 
 const formatter = new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'USD' });
@@ -48,6 +47,7 @@ class Popup extends React.Component {
                              maxHeight: size - 5
                          }} />
                 </div>
+                <b style={{ fontSize: 10 }}>{ formatDistance(new Date(offer.createdAt), new Date()) }</b>
 
                 { offer.square ? <div style={{ fontSize: 10 }}><b>{offer.square} м²</b></div> : null }
                 { offer.rooms ? <div style={{ fontSize: 10 }}><i>комнат { offer.rooms }</i></div> : null }
